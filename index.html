@@ -6,6 +6,8 @@
     <title>游戏下载中心</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 先加载数据文件 -->
+    <script src="data.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -34,15 +36,14 @@
             .section-title {
                 @apply text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6 border-b-2 border-primary pb-2;
             }
-            /* 核心优化：确保移动端一行显示4个 */
             .grid-4-cols {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 8px; /* 减小间距，确保能放下4个 */
+                gap: 8px;
             }
             @media (min-width: 640px) {
                 .grid-4-cols {
-                    gap: 16px; /* 大屏幕增大间距 */
+                    gap: 16px;
                 }
             }
         }
@@ -91,63 +92,61 @@
             </div>
         </section>
 
-        <!-- 游戏分类 - 核心优化区域 -->
+        <!-- 游戏分类 -->
         <section id="categories" class="mb-10">
             <h3 class="section-title">游戏分类</h3>
-            <!-- 使用自定义网格类确保一行4个 -->
             <div class="grid-4-cols">
-				<!-- 手机游戏分类（渐变：绿到青 + 手机图标） -->
-				<div class="category-card">
-					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-						<i class="fa fa-mobile text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
-					</div>
-					<div class="p-2 text-center">
-						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-							<i class="fa fa-mobile text-primary mr-1"></i>手机
-						</h4>
-					</div>
-				</div>
-				
-				<!-- 电脑游戏分类（渐变：紫到靛蓝 + 桌面图标，与目标样式一致） -->
-				<div class="category-card">
-					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-						<i class="fa fa-desktop text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
-					</div>
-					<div class="p-2 text-center">
-						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-							<i class="fa fa-desktop text-primary mr-1"></i>电脑
-						</h4>
-					</div>
-				</div>
-				
-				<!-- 绅士游戏分类（渐变：粉到玫瑰红 + 保密图标） -->
-				<div class="category-card" >
-					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
-						<i class="fa fa-user-secret text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
-					</div>
-					<div class="p-2 text-center">
-						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-							<i class="fa fa-user-secret text-primary mr-1"></i>绅士
-						</h4>
-					</div>
-				</div>
-
+                <!-- 手机游戏分类 -->
+                <div class="category-card" data-type="mobile">
+                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <i class="fa fa-mobile text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+                            <i class="fa fa-mobile text-primary mr-1"></i>手机
+                        </h4>
+                    </div>
+                </div>
+                
+                <!-- 电脑游戏分类 -->
+                <div class="category-card" data-type="pc">
+                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fa fa-desktop text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+                            <i class="fa fa-desktop text-primary mr-1"></i>电脑
+                        </h4>
+                    </div>
+                </div>
+                
+                <!-- 绅士游戏分类 -->
+                <div class="category-card" data-type="gentleman">
+                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
+                        <i class="fa fa-user-secret text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+                            <i class="fa fa-user-secret text-primary mr-1"></i>绅士
+                        </h4>
+                    </div>
+                </div>
 
                 <!-- 全部游戏 -->
-				<div class="category-card">
-					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center">
-						<i class="fa fa-th-large text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
-					</div>
-					<div class="p-2 text-center">
-						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-							<i class="fa fa-th-large text-primary mr-1"></i>全部
-						</h4>
-					</div>
-				</div>
+                <div class="category-card" data-type="all">
+                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center">
+                        <i class="fa fa-th-large text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    </div>
+                    <div class="p-2 text-center">
+                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+                            <i class="fa fa-th-large text-primary mr-1"></i>全部
+                        </h4>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 热门游戏 - 自动生成区域 -->
+        <!-- 热门游戏 -->
         <section id="featured" class="mb-10">
             <h3 class="section-title">热门游戏</h3>
             <div id="featured-games-container" class="grid-4-cols">
@@ -164,10 +163,10 @@
             <h3 class="section-title">关于我们</h3>
             <p class="text-gray-600 mb-3 text-sm">本网站提供各类精选游戏的下载服务，所有游戏均来自互联网公开资源整理。</p>
             <p class="text-gray-600 mb-3 text-sm">我们致力于为玩家提供便捷的游戏获取渠道，同时尊重并保护所有游戏的知识产权。</p>
-            <div class="mt-4 flex items-center text-gray-700 text-sm">
-                <i class="fa fa-envelope-o mr-2 text-primary"></i>
-                <span>contact@gamedownloads.com</span>
-            </div>
+            <!-- <div class="mt-4 flex items-center text-gray-700 text-sm">
+               <i class="fa fa-envelope-o mr-2 text-primary"></i>
+                <span>3578291279@qq.com</span> 
+            </div>-->
         </section>
 
         <!-- 法律声明 -->
@@ -177,13 +176,9 @@
             </h3>
             <div class="space-y-2">
                 <p>1. 本网站仅提供游戏下载链接的二维码展示服务，所有游戏资源均来自互联网公开分享，网站不对资源内容本身承担责任。</p>
-                
                 <p>2. 所有游戏的版权归原开发公司或原作者所有。本网站仅为方便用户查找和使用，不声明对任何游戏拥有版权。</p>
-                
-                <p>3. 若您是游戏版权持有人，认为本网站展示的内容侵犯了您的合法权益，请联系我们（contact@gamedownloads.com），我们将在收到通知后24小时内移除相关内容。</p>
-                
+                <p>3. 若您是游戏版权持有人，认为本网站展示的内容侵犯了您的合法权益，请联系我们（3578291279@qq.com），我们将在收到通知后24小时内移除相关内容。</p>
                 <p>4. 本网站提供的"绅士游戏"分类内容仅面向年满18周岁的成年用户，访问者需确认自己已年满18周岁，并对自身行为负责。</p>
-                
                 <p>5. 用户通过本网站下载游戏即表示同意，仅将所下载内容用于个人研究和学习，不得用于任何商业用途，由此产生的一切法律责任由用户自行承担。</p>
             </div>
         </section>
@@ -218,26 +213,87 @@
     </footer>
 
     <script>
+        // 等待DOM和数据都加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查数据是否加载成功
+            if (typeof allGames === 'undefined') {
+                document.getElementById('featured-games-container').innerHTML = `
+                    <div class="col-span-4 text-center py-8 text-red-500">
+                        <i class="fa fa-exclamation-circle text-2xl mb-2"></i>
+                        <p>数据加载失败，请检查data.js文件是否存在</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // 加载热门游戏
+            loadFeaturedGames();
+        });
+
+        // 加载热门游戏
+        function loadFeaturedGames() {
+            // 从全局数据中筛选热门游戏
+            const featuredGames = allGames.filter(game => game.isFeatured);
+            const container = document.getElementById('featured-games-container');
+            
+            container.innerHTML = '';
+            
+            if (featuredGames.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-4 text-center py-8 text-gray-500">
+                        <i class="fa fa-star-o text-2xl mb-2"></i>
+                        <p>暂无热门游戏推荐</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // 生成游戏卡片
+            featuredGames.forEach(game => {
+                // 类型样式映射
+                const typeConfig = {
+                    'mobile': { class: 'bg-blue-100 text-blue-800', text: '手机' },
+                    'pc': { class: 'bg-green-100 text-green-800', text: '电脑' },
+                    'gentleman': { class: 'bg-purple-100 text-purple-800', text: '绅士' }
+                };
+                const config = typeConfig[game.type] || { class: 'bg-gray-100 text-gray-800', text: '未知' };
+                
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.innerHTML = `
+                    <div class="p-2">
+                        <div class="bg-gray-100 p-2 flex justify-center aspect-square">
+                            <img src="${game.icon}" alt="${game.name}" class="rounded w-full h-full object-cover" 
+                                 onerror="this.src='https://picsum.photos/seed/default/200/200'">
+                        </div>
+                        <h4 class="text-xs font-semibold mt-2 text-dark text-center truncate">${game.name}</h4>
+                        <div class="mt-1 flex justify-center">
+                            <span class="${config.class} text-xs px-1.5 py-0.5 rounded-full">${config.text}</span>
+                        </div>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    localStorage.setItem('currentGame', JSON.stringify(game));
+                    window.location.href = 'detail.html';
+                });
+                
+                container.appendChild(card);
+            });
+        }
+
+        // 分类卡片点击事件
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.getAttribute('data-type');
+                window.location.href = `category.html?type=${type}`;
+            });
+        });
+
         // 移动端菜单切换
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const nav = document.getElementById('mobile-menu');
             nav.classList.toggle('hidden');
-        });
-
-        // 游戏分类卡片点击事件
-        document.querySelectorAll('.category-card').forEach((card, index) => {
-            const types = ['mobile', 'pc', 'gentleman', 'all'];
-            card.addEventListener('click', () => {
-                window.location.href = `category.html?type=${types[index]}`;
-            });
-        });
-
-        // 热门游戏卡片点击事件
-        document.querySelectorAll('#featured .game-card').forEach((card, index) => {
-            const ids = [1, 7, 11, 2]; // 对应游戏ID
-            card.addEventListener('click', () => {
-                window.location.href = `detail.html?id=${ids[index]}`;
-            });
         });
 
         // 平滑滚动
@@ -252,3 +308,4 @@
     </script>
 </body>
 </html>
+    
