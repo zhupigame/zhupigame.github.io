@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏下载中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .category-card {
+                @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer;
+            }
+            .game-card {
+                @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+            .section-title {
+                @apply text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6 border-b-2 border-primary pb-2;
+            }
+            /* 核心优化：确保移动端一行显示4个 */
+            .grid-4-cols {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px; /* 减小间距，确保能放下4个 */
+            }
+            @media (min-width: 640px) {
+                .grid-4-cols {
+                    gap: 16px; /* 大屏幕增大间距 */
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- 导航栏 -->
+    <header class="bg-primary text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fa fa-gamepad mr-2"></i>游戏下载中心
+            </h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-yellow-300 transition-colors"><i class="fa fa-home mr-1"></i>首页</a>
+                <a href="#categories" class="hover:text-yellow-300 transition-colors"><i class="fa fa-th-large mr-1"></i>游戏分类</a>
+                <a href="#featured" class="hover:text-yellow-300 transition-colors"><i class="fa fa-star mr-1"></i>热门游戏</a>
+                <a href="#about" class="hover:text-yellow-300 transition-colors"><i class="fa fa-info-circle mr-1"></i>关于我们</a>
+            </nav>
+            <button class="md:hidden text-2xl" id="mobile-menu-button">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary px-4 py-2">
+            <nav class="flex flex-col space-y-3 py-3">
+                <a href="#home" class="hover:text-yellow-300 transition-colors"><i class="fa fa-home mr-1"></i>首页</a>
+                <a href="#categories" class="hover:text-yellow-300 transition-colors"><i class="fa fa-th-large mr-1"></i>游戏分类</a>
+                <a href="#featured" class="hover:text-yellow-300 transition-colors"><i class="fa fa-star mr-1"></i>热门游戏</a>
+                <a href="#about" class="hover:text-yellow-300 transition-colors"><i class="fa fa-info-circle mr-1"></i>关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- 首页横幅 -->
+        <section id="home" class="bg-gradient-to-r from-primary to-blue-700 text-white rounded-2xl p-6 md:p-10 mb-8 text-center">
+            <h2 class="text-[clamp(1.5rem,4vw,3rem)] font-bold mb-3">精选游戏下载中心</h2>
+            <p class="text-base md:text-lg max-w-2xl mx-auto opacity-90">
+                汇聚各类热门游戏，提供安全便捷的下载服务，扫码即可获取
+            </p>
+            <div class="mt-6">
+                <a href="#categories" class="bg-white text-primary px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all inline-flex items-center text-sm md:text-base">
+                    <i class="fa fa-gamepad mr-2"></i>浏览游戏分类
+                </a>
+            </div>
+        </section>
+
+        <!-- 游戏分类 - 核心优化区域 -->
+        <section id="categories" class="mb-10">
+            <h3 class="section-title">游戏分类</h3>
+            <!-- 使用自定义网格类确保一行4个 -->
+            <div class="grid-4-cols">
+				<!-- 手机游戏分类（渐变：绿到青 + 手机图标） -->
+				<div class="category-card">
+					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+						<i class="fa fa-mobile text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+					</div>
+					<div class="p-2 text-center">
+						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+							<i class="fa fa-mobile text-primary mr-1"></i>手机
+						</h4>
+					</div>
+				</div>
+				
+				<!-- 电脑游戏分类（渐变：紫到靛蓝 + 桌面图标，与目标样式一致） -->
+				<div class="category-card">
+					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+						<i class="fa fa-desktop text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+					</div>
+					<div class="p-2 text-center">
+						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+							<i class="fa fa-desktop text-primary mr-1"></i>电脑
+						</h4>
+					</div>
+				</div>
+				
+				<!-- 绅士游戏分类（渐变：粉到玫瑰红 + 保密图标） -->
+				<div class="category-card" >
+					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
+						<i class="fa fa-user-secret text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+					</div>
+					<div class="p-2 text-center">
+						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+							<i class="fa fa-user-secret text-primary mr-1"></i>绅士
+						</h4>
+					</div>
+				</div>
+
+
+                <!-- 全部游戏 -->
+				<div class="category-card">
+					<div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center">
+						<i class="fa fa-th-large text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+					</div>
+					<div class="p-2 text-center">
+						<h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
+							<i class="fa fa-th-large text-primary mr-1"></i>全部
+						</h4>
+					</div>
+				</div>
+            </div>
+        </section>
+
+        <!-- 热门游戏 - 自动生成区域 -->
+        <section id="featured" class="mb-10">
+            <h3 class="section-title">热门游戏</h3>
+            <div id="featured-games-container" class="grid-4-cols">
+                <!-- 加载中提示 -->
+                <div class="col-span-4 text-center py-8 text-gray-500">
+                    <i class="fa fa-spinner fa-spin text-2xl mb-2"></i>
+                    <p>加载热门游戏中...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section id="about" class="bg-white p-6 rounded-xl shadow-md mb-10">
+            <h3 class="section-title">关于我们</h3>
+            <p class="text-gray-600 mb-3 text-sm">本网站提供各类精选游戏的下载服务，所有游戏均来自互联网公开资源整理。</p>
+            <p class="text-gray-600 mb-3 text-sm">我们致力于为玩家提供便捷的游戏获取渠道，同时尊重并保护所有游戏的知识产权。</p>
+            <div class="mt-4 flex items-center text-gray-700 text-sm">
+                <i class="fa fa-envelope-o mr-2 text-primary"></i>
+                <span>contact@gamedownloads.com</span>
+            </div>
+        </section>
+
+        <!-- 法律声明 -->
+        <section id="legal-notice" class="bg-gray-800 text-gray-300 p-4 rounded-xl text-xs">
+            <h3 class="text-lg font-bold text-white mb-3 flex items-center">
+                <i class="fa fa-gavel mr-2"></i>法律声明
+            </h3>
+            <div class="space-y-2">
+                <p>1. 本网站仅提供游戏下载链接的二维码展示服务，所有游戏资源均来自互联网公开分享，网站不对资源内容本身承担责任。</p>
+                
+                <p>2. 所有游戏的版权归原开发公司或原作者所有。本网站仅为方便用户查找和使用，不声明对任何游戏拥有版权。</p>
+                
+                <p>3. 若您是游戏版权持有人，认为本网站展示的内容侵犯了您的合法权益，请联系我们（contact@gamedownloads.com），我们将在收到通知后24小时内移除相关内容。</p>
+                
+                <p>4. 本网站提供的"绅士游戏"分类内容仅面向年满18周岁的成年用户，访问者需确认自己已年满18周岁，并对自身行为负责。</p>
+                
+                <p>5. 用户通过本网站下载游戏即表示同意，仅将所下载内容用于个人研究和学习，不得用于任何商业用途，由此产生的一切法律责任由用户自行承担。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-6 mt-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-3 md:mb-0">
+                    <h3 class="text-lg font-bold flex items-center">
+                        <i class="fa fa-gamepad mr-2"></i>游戏下载中心
+                    </h3>
+                    <p class="text-gray-400 text-xs mt-1">提供安全可靠的游戏下载服务</p>
+                </div>
+                <div class="flex space-x-3">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
+                        <i class="fa fa-weibo"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
+                        <i class="fa fa-wechat"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
+                        <i class="fa fa-qq"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-4 pt-4 text-center text-gray-400 text-xs">
+                &copy; 2023 游戏下载中心 - <a href="#legal-notice" class="underline hover:text-white">查看法律声明</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const nav = document.getElementById('mobile-menu');
+            nav.classList.toggle('hidden');
+        });
+
+        // 游戏分类卡片点击事件
+        document.querySelectorAll('.category-card').forEach((card, index) => {
+            const types = ['mobile', 'pc', 'gentleman', 'all'];
+            card.addEventListener('click', () => {
+                window.location.href = `category.html?type=${types[index]}`;
+            });
+        });
+
+        // 热门游戏卡片点击事件
+        document.querySelectorAll('#featured .game-card').forEach((card, index) => {
+            const ids = [1, 7, 11, 2]; // 对应游戏ID
+            card.addEventListener('click', () => {
+                window.location.href = `detail.html?id=${ids[index]}`;
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏详情 - 游戏下载中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .nav-bar {
+            background: #3B82F6;
+            color: white;
+            padding: 12px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 16px;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        .nav-link:hover {
+            opacity: 1;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #3B82F6;
+            text-decoration: none;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .back-link i {
+            margin-right: 6px;
+        }
+        .game-detail {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .detail-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 24px;
+            align-items: flex-start;
+        }
+        /* 游戏主图（名称左侧） */
+        .game-main-image {
+            flex: 0 0 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .game-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: #666;
+            font-size: 14px;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+        .meta-item i {
+            margin-right: 6px;
+            color: #3B82F6;
+        }
+        .action-and-qr {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .qr-code-container {
+            background: #f5f5f5;
+            padding: 16px;
+            border-radius: 8px;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .qr-code-container:hover {
+            transform: scale(1.02);
+        }
+        .qr-code {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+        }
+        .game-description {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+        }
+        .btn-primary {
+            background: #3B82F6;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        /* 游戏截图区域 */
+        .screenshots-section {
+            margin-top: 32px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .screenshot-item {
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .screenshot-item:hover {
+            transform: scale(1.02);
+        }
+        .screenshot-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        /* 截图预览弹窗 */
+        .screenshot-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .screenshot-modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+        .modal-img {
+            max-width: 100%;
+            max-height: 90vh;
+            border: 4px solid white;
+            border-radius: 4px;
+        }
+        .close-screenshot {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* 二维码放大弹窗 */
+        .qr-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .qr-modal-content {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 90%;
+        }
+        .qr-modal-title {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .qr-modal-image {
+            max-width: 100%;
+            max-height: 70vh;
+            margin-bottom: 16px;
+        }
+        .close-modal {
+            background: #3B82F6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+            margin-top: 32px;
+        }
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .detail-header {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .game-main-image {
+                margin: 0 auto;
+                flex: 0 0 160px;
+            }
+            .action-and-qr {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .action-buttons {
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+            }
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+            .screenshot-img {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f8f9fa;">
+    <!-- 导航栏 -->
+    <header class="nav-bar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa fa-gamepad"></i>
+                <span>游戏下载中心</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fa fa-home"></i> 首页</a>
+                <a href="category.html?type=all" class="nav-link"><i class="fa fa-th-large"></i> 全部</a>
+                <a href="category.html?type=mobile" class="nav-link"><i class="fa fa-mobile"></i> 手机</a>
+                <a href="category.html?type=pc" class="nav-link"><i class="fa fa-desktop"></i> 电脑</a>
+                <a href="category.html?type=gentleman" class="nav-link"><i class="fa fa-user-secret"></i> 绅士</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="nav-links" id="mobile-menu" style="display: none; padding: 12px 15px; background: #2563eb; flex-direction: column; gap: 8px;">
+            <a href="index.html" class="nav-link"><i class="fa fa-home"></i> 首页</a>
+            <a href="category.html?type=all" class="nav-link"><i class="fa fa-th-large"></i> 全部</a>
+            <a href="category.html?type=mobile" class="nav-link"><i class="fa fa-mobile"></i> 手机</a>
+            <a href="category.html?type=pc" class="nav-link"><i class="fa fa-desktop"></i> 电脑</a>
+            <a href="category.html?type=gentleman" class="nav-link"><i class="fa fa-user-secret"></i> 绅士</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 返回链接 -->
+        <a href="javascript:history.back()" class="back-link">
+            <i class="fa fa-arrow-left"></i> 返回游戏列表
+        </a>
+
+        <!-- 游戏详情 -->
+        <section class="game-detail" id="game-detail">
+            <!-- 加载中提示 -->
+            <div style="text-align: center; padding: 40px 0; color: #999;">
+                <i class="fa fa-spinner fa-spin" style="font-size: 24px; margin-bottom: 8px;"></i>
+                <p>加载游戏详情中...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 二维码放大弹窗 -->
+    <div class="qr-modal" id="qr-modal">
+        <div class="qr-modal-content">
+            <h3 class="qr-modal-title" id="modal-game-title">扫码下载游戏</h3>
+            <img src="" alt="放大的游戏下载二维码" class="qr-modal-image" id="modal-qr-image">
+            <button class="close-modal" id="close-modal">关闭</button>
+        </div>
+    </div>
+
+    <!-- 截图预览弹窗 -->
+    <div class="screenshot-modal" id="screenshot-modal">
+        <div class="screenshot-modal-content">
+            <button class="close-screenshot" id="close-screenshot">×</button>
+            <img src="" alt="游戏截图预览" class="modal-img" id="modal-screenshot-img">
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        &copy; 2023 游戏下载中心 - 所有游戏版权归原作者所有
+    </footer>
+
+    <script>
+        // 全局变量存储当前游戏信息
+        let currentGame = null;
+        
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+        });
+
+        // 关闭二维码弹窗
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('qr-modal').style.display = 'none';
+        });
+        
+        // 点击二维码弹窗外部关闭
+        document.getElementById('qr-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+        
+        // 关闭截图弹窗
+        document.getElementById('close-screenshot').addEventListener('click', function() {
+            document.getElementById('screenshot-modal').style.display = 'none';
+        });
+        
+        // 点击截图弹窗外部关闭
+        document.getElementById('screenshot-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+        
+        // 点击扫码下载按钮显示弹窗
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.btn-primary') && currentGame) {
+                showQrModal();
+            }
+        });
+
+        // 显示二维码弹窗
+        function showQrModal() {
+            if (!currentGame) return;
+            
+            const modal = document.getElementById('qr-modal');
+            const modalTitle = document.getElementById('modal-game-title');
+            const modalImage = document.getElementById('modal-qr-image');
+            
+            modalTitle.textContent = `扫码下载 ${currentGame.name}`;
+            modalImage.src = currentGame.qrCode;
+            modalImage.alt = `${currentGame.name}下载二维码`;
+            
+            modal.style.display = 'flex';
+        }
+
+        // 显示截图弹窗
+        function showScreenshotModal(src) {
+            const modal = document.getElementById('screenshot-modal');
+            const modalImg = document.getElementById('modal-screenshot-img');
+            
+            modalImg.src = src;
+            modal.style.display = 'flex';
+        }
+
+        // 获取游戏详情并渲染
+        function renderGameDetail() {
+            // 从localStorage获取游戏数据
+            const gameData = localStorage.getItem('currentGame');
+            
+            if (!gameData) {
+                // 如果没有找到游戏数据，尝试从URL参数获取ID并查找
+                const urlParams = new URLSearchParams(window.location.search);
+                const gameId = parseInt(urlParams.get('id'));
+                
+                // 游戏数据
+                const games = [
+                    { 
+                        id: 1, 
+                        name: "星际探险", 
+                        type: "mobile", 
+                        icon: "https://picsum.photos/seed/icon1/200/200",  // 列表页图标
+                        mainImage: "https://picsum.photos/seed/main1/400/500",  // 详情页名称左侧主图
+                        qrCode: "https://picsum.photos/seed/qr1/200/200",
+                        screenshots: [
+                            "https://picsum.photos/seed/shot11/800/450",
+                            "https://picsum.photos/seed/shot12/800/450",
+                            "https://picsum.photos/seed/shot13/800/450"
+                        ],
+                        description: "一款太空探索类角色扮演游戏，玩家将驾驶自己的飞船探索未知星系，与外星文明接触，完成各种任务和挑战。游戏拥有丰富的剧情和开放的宇宙可供探索。",
+                        size: "1.2GB",
+                        version: "1.3.2",
+                        updateDate: "2023-10-15"
+                    }
+                ];
+                
+                const game = games.find(g => g.id === gameId);
+                
+                if (!game) {
+                    document.getElementById('game-detail').innerHTML = `
+                        <div style="text-align: center; padding: 40px 0; color: #999;">
+                            <i class="fa fa-exclamation-circle" style="font-size: 24px; margin-bottom: 8px;"></i>
+                            <p>未找到该游戏的详情信息</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                currentGame = game;
+                renderGameInfo(game);
+                return;
+            }
+            
+            // 解析游戏数据并渲染
+            currentGame = JSON.parse(gameData);
+            renderGameInfo(currentGame);
+        }
+
+        // 渲染游戏详情信息
+        function renderGameInfo(game) {
+            const typeMap = {
+                'mobile': '手机游戏',
+                'pc': '电脑游戏',
+                'gentleman': '绅士游戏'
+            };
+            
+            // 构建截图区域HTML
+            let screenshotsHtml = '';
+            if (game.screenshots && game.screenshots.length > 0) {
+                screenshotsHtml = `
+                    <div class="screenshots-section">
+                        <h3 class="section-title">
+                            <i class="fa fa-picture-o"></i>游戏截图
+                        </h3>
+                        <div class="screenshots-grid">
+                            ${game.screenshots.map(shot => `
+                                <div class="screenshot-item" onclick="showScreenshotModal('${shot}')">
+                                    <img src="${shot}" alt="${game.name}游戏截图" class="screenshot-img">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            const detailHtml = `
+                <div class="detail-header">
+                    <!-- 游戏主图（位于名称左侧） -->
+                    <div class="game-main-image">
+                        <img src="${game.mainImage}" alt="${game.name}游戏主图" class="main-image">
+                    </div>
+                    
+                    <div class="info-section">
+                        <h1 class="game-title">${game.name}</h1>
+                        <div class="game-meta">
+                            <div class="meta-item">
+                                <i class="fa fa-gamepad"></i>
+                                <span>类型：${typeMap[game.type] || '未知'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-download"></i>
+                                <span>大小：${game.size || '未知'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-code-fork"></i>
+                                <span>版本：${game.version || '未知'}</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa fa-calendar"></i>
+                                <span>更新：${game.updateDate || '未知'}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="action-and-qr">
+                            <div class="action-buttons">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-qrcode"></i> 扫码下载
+                                </button>
+                                <button class="btn btn-secondary">
+                                    <i class="fa fa-share-alt"></i> 分享游戏
+                                </button>
+                            </div>
+                            
+                            <!-- 二维码 -->
+                            <div class="qr-code-container" id="main-qr-code">
+                                <img src="${game.qrCode}" alt="${game.name}下载二维码" class="qr-code">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-description">
+                    <h2 style="font-size: 18px; margin-bottom: 12px; color: #333;">游戏介绍</h2>
+                    <p>${game.description || '暂无详细介绍'}</p>
+                </div>
+                
+                <!-- 游戏截图区域 -->
+                ${screenshotsHtml}
+            `;
+            
+            document.getElementById('game-detail').innerHTML = detailHtml;
+            
+            // 为二维码容器添加点击事件
+            document.getElementById('main-qr-code').addEventListener('click', showQrModal);
+        }
+
+        // 页面加载完成后渲染详情
+        document.addEventListener('DOMContentLoaded', renderGameDetail);
+    </script>
+</body>
+</html>
