@@ -4,142 +4,443 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>游戏下载中心</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- 先加载数据文件 -->
     <script src="data.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        dark: '#1E293B',
-                        light: '#F8FAFC'
-                    }
-                }
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* 导航栏样式 */
+        header {
+            background-color: #3B82F6;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 8px;
+        }
+        .desktop-nav {
+            display: none;
+            gap: 24px;
+        }
+        .desktop-nav a {
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        .desktop-nav a:hover {
+            color: #fde68a;
+        }
+        .desktop-nav a i {
+            margin-right: 4px;
+        }
+        .mobile-menu-btn {
+            font-size: 24px;
+            color: white;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px 16px;
+            background-color: #3B82F6;
+        }
+        .mobile-nav a {
+            display: flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        .mobile-nav a:hover {
+            color: #fde68a;
+        }
+        .mobile-nav a i {
+            margin-right: 4px;
+        }
+
+        /* 主内容区样式 - 增加顶部间距与导航栏分隔 */
+        main {
+            flex: 1;
+            padding: 24px 0;
+            margin-top: 0;
+        }
+
+        /* 首页横幅 - 增加顶部间距与导航栏分隔 */
+        .hero-section {
+            background: linear-gradient(to right, #3B82F6, #2563eb);
+            color: white;
+            border-radius: 1rem;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: center;
+            margin-top: 16px; /* 关键修改：增加顶部间距与导航栏分隔 */
+        }
+        .hero-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .hero-description {
+            font-size: 14px;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            opacity: 0.9;
+        }
+        .hero-button {
+            background-color: white;
+            color: #3B82F6;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+            font-size: 14px;
+        }
+        .hero-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* 通用区块标题 */
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #3B82F6;
+            padding-bottom: 8px;
+        }
+
+        /* 游戏分类 */
+        .categories-section {
+            margin-bottom: 40px;
+        }
+        .grid-4-cols {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+        .category-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .category-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+        .category-icon-container {
+            aspect-ratio: 3/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .category-icon {
+            font-size: 64px;
+            color: white;
+            transition: transform 0.5s ease;
+        }
+        .category-card:hover .category-icon {
+            transform: scale(1.1);
+        }
+        .category-info {
+            padding: 8px;
+            text-align: center;
+        }
+        .category-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .category-name i {
+            margin-right: 4px;
+            color: #3B82F6;
+        }
+
+        /* 热门游戏 */
+        .featured-section {
+            margin-bottom: 40px;
+        }
+        .game-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .game-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+        .game-card-inner {
+            padding: 8px;
+        }
+        .featured-game-wrapper {
+            width: 100%;
+            padding-top: 100%; /* 正方形比例 */
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            border-radius: 6px;
+        }
+        .featured-game-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+        .game-name {
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+            color: #1e293b;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .game-type-badge {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: center;
+        }
+        .badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 9999px;
+        }
+
+        /* 关于我们 */
+        .about-section {
+            background-color: white;
+            padding: 24px;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .about-text {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        /* 法律声明 */
+        .legal-notice {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 16px;
+            border-radius: 0.75rem;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .legal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .legal-title i {
+            margin-right: 8px;
+        }
+        .legal-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .legal-content p {
+            line-height: 1.5;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 0;
+            margin-top: auto;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            padding: 0 16px;
+        }
+        .footer-logo {
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .footer-logo i {
+            margin-right: 8px;
+        }
+
+        /* 响应式调整 */
+        @media (min-width: 640px) {
+            .grid-4-cols {
+                gap: 16px;
+            }
+            .mobile-menu-btn {
+                display: none;
+            }
+            .desktop-nav {
+                display: flex;
+            }
+            /* 桌面端增加更大间距 */
+            .hero-section {
+                margin-top: 24px;
             }
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .category-card {
-                @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer;
-            }
-            .game-card {
-                @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
-            }
-            .section-title {
-                @apply text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6 border-b-2 border-primary pb-2;
-            }
-            .grid-4-cols {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
-            }
-            @media (min-width: 640px) {
-                .grid-4-cols {
-                    gap: 16px;
-                }
+
+        @media (min-width: 1024px) {
+            #featured-games-container {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 16px;
             }
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
     <!-- 导航栏 -->
-    <header class="bg-primary text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold flex items-center">
-                <i class="fa fa-gamepad mr-2"></i>游戏下载中心
+    <header>
+        <div class="container header-container">
+            <h1 class="logo">
+                <i class="fa fa-gamepad"></i>游戏下载中心
             </h1>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-yellow-300 transition-colors"><i class="fa fa-home mr-1"></i>首页</a>
-                <a href="#categories" class="hover:text-yellow-300 transition-colors"><i class="fa fa-th-large mr-1"></i>游戏分类</a>
-                <a href="#featured" class="hover:text-yellow-300 transition-colors"><i class="fa fa-star mr-1"></i>热门游戏</a>
-                <a href="#about" class="hover:text-yellow-300 transition-colors"><i class="fa fa-info-circle mr-1"></i>关于我们</a>
+            <nav class="desktop-nav">
+                <a href="#home"><i class="fa fa-home"></i>首页</a>
+                <a href="#categories"><i class="fa fa-th-large"></i>游戏分类</a>
+                <a href="#featured"><i class="fa fa-star"></i>热门游戏</a>
+                <a href="#about"><i class="fa fa-info-circle"></i>关于我们</a>
             </nav>
-            <button class="md:hidden text-2xl" id="mobile-menu-button">
+            <button class="mobile-menu-btn" id="mobile-menu-button">
                 <i class="fa fa-bars"></i>
             </button>
         </div>
         <!-- 移动端菜单 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-primary px-4 py-2">
-            <nav class="flex flex-col space-y-3 py-3">
-                <a href="#home" class="hover:text-yellow-300 transition-colors"><i class="fa fa-home mr-1"></i>首页</a>
-                <a href="#categories" class="hover:text-yellow-300 transition-colors"><i class="fa fa-th-large mr-1"></i>游戏分类</a>
-                <a href="#featured" class="hover:text-yellow-300 transition-colors"><i class="fa fa-star mr-1"></i>热门游戏</a>
-                <a href="#about" class="hover:text-yellow-300 transition-colors"><i class="fa fa-info-circle mr-1"></i>关于我们</a>
-            </nav>
+        <div id="mobile-menu" class="mobile-nav">
+            <a href="#home"><i class="fa fa-home"></i>首页</a>
+            <a href="#categories"><i class="fa fa-th-large"></i>游戏分类</a>
+            <a href="#featured"><i class="fa fa-star"></i>热门游戏</a>
+            <a href="#about"><i class="fa fa-info-circle"></i>关于我们</a>
         </div>
     </header>
 
     <!-- 主内容区 -->
-    <main class="container mx-auto px-4 py-6">
-        <!-- 首页横幅 -->
-        <section id="home" class="bg-gradient-to-r from-primary to-blue-700 text-white rounded-2xl p-6 md:p-10 mb-8 text-center">
-            <h2 class="text-[clamp(1.5rem,4vw,3rem)] font-bold mb-3">精选游戏下载中心</h2>
-            <p class="text-base md:text-lg max-w-2xl mx-auto opacity-90">
-                汇聚各类热门游戏，提供安全便捷的下载服务，扫码即可获取
+    <main class="container">
+        <!-- 首页横幅 - 已增加与导航栏的间距 -->
+        <section id="home" class="hero-section">
+            <h2 class="hero-title">精选游戏下载中心</h2>
+            <p class="hero-description">
+                汇聚各类热门游戏，提供安全便捷的下载服务，扫码即可免费获取
             </p>
-            <div class="mt-6">
-                <a href="#categories" class="bg-white text-primary px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all inline-flex items-center text-sm md:text-base">
-                    <i class="fa fa-gamepad mr-2"></i>浏览游戏分类
+            <div>
+                <a href="#categories" class="hero-button">
+                    <i class="fa fa-gamepad"></i>浏览游戏分类
                 </a>
             </div>
         </section>
 
         <!-- 游戏分类 -->
-        <section id="categories" class="mb-10">
+        <section id="categories" class="categories-section">
             <h3 class="section-title">游戏分类</h3>
             <div class="grid-4-cols">
                 <!-- 手机游戏分类 -->
                 <div class="category-card" data-type="mobile">
-                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                        <i class="fa fa-mobile text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    <div class="category-icon-container" style="background: linear-gradient(to bottom right, #22c55e, #15803d);">
+                        <i class="fa fa-mobile category-icon"></i>
                     </div>
-                    <div class="p-2 text-center">
-                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-                            <i class="fa fa-mobile text-primary mr-1"></i>手机
+                    <div class="category-info">
+                        <h4 class="category-name">
+                            <i class="fa fa-mobile"></i>手机
                         </h4>
                     </div>
                 </div>
                 
                 <!-- 电脑游戏分类 -->
                 <div class="category-card" data-type="pc">
-                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-                        <i class="fa fa-desktop text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    <div class="category-icon-container" style="background: linear-gradient(to bottom right, #8b5cf6, #5b21b6);">
+                        <i class="fa fa-desktop category-icon"></i>
                     </div>
-                    <div class="p-2 text-center">
-                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-                            <i class="fa fa-desktop text-primary mr-1"></i>电脑
+                    <div class="category-info">
+                        <h4 class="category-name">
+                            <i class="fa fa-desktop"></i>电脑
                         </h4>
                     </div>
                 </div>
                 
                 <!-- 绅士游戏分类 -->
                 <div class="category-card" data-type="gentleman">
-                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
-                        <i class="fa fa-user-secret text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    <div class="category-icon-container" style="background: linear-gradient(to bottom right, #ec4899, #be185d);">
+                        <i class="fa fa-user-secret category-icon"></i>
                     </div>
-                    <div class="p-2 text-center">
-                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-                            <i class="fa fa-user-secret text-primary mr-1"></i>绅士
+                    <div class="category-info">
+                        <h4 class="category-name">
+                            <i class="fa fa-user-secret"></i>绅士
                         </h4>
                     </div>
                 </div>
 
                 <!-- 全部游戏 -->
                 <div class="category-card" data-type="all">
-                    <div class="aspect-[3/2] overflow-hidden bg-gradient-to-br from-primary to-blue-700 flex items-center justify-center">
-                        <i class="fa fa-th-large text-white text-6xl transition-transform duration-500 hover:scale-110"></i>
+                    <div class="category-icon-container" style="background: linear-gradient(to bottom right, #3B82F6, #2563eb);">
+                        <i class="fa fa-th-large category-icon"></i>
                     </div>
-                    <div class="p-2 text-center">
-                        <h4 class="text-xl font-bold mb-1 text-dark flex items-center justify-center">
-                            <i class="fa fa-th-large text-primary mr-1"></i>全部
+                    <div class="category-info">
+                        <h4 class="category-name">
+                            <i class="fa fa-th-large"></i>全部
                         </h4>
                     </div>
                 </div>
@@ -147,34 +448,30 @@
         </section>
 
         <!-- 热门游戏 -->
-        <section id="featured" class="mb-10">
+        <section id="featured" class="featured-section">
             <h3 class="section-title">热门游戏</h3>
             <div id="featured-games-container" class="grid-4-cols">
                 <!-- 加载中提示 -->
-                <div class="col-span-4 text-center py-8 text-gray-500">
-                    <i class="fa fa-spinner fa-spin text-2xl mb-2"></i>
+                <div style="grid-column: 1 / -1; text-align: center; padding: 32px 0; color: #64748b;">
+                    <i class="fa fa-spinner fa-spin text-2xl margin-bottom: 8px;"></i>
                     <p>加载热门游戏中...</p>
                 </div>
             </div>
         </section>
 
         <!-- 关于我们 -->
-        <section id="about" class="bg-white p-6 rounded-xl shadow-md mb-10">
+        <section id="about" class="about-section">
             <h3 class="section-title">关于我们</h3>
-            <p class="text-gray-600 mb-3 text-sm">本网站提供各类精选游戏的下载服务，所有游戏均来自互联网公开资源整理。</p>
-            <p class="text-gray-600 mb-3 text-sm">我们致力于为玩家提供便捷的游戏获取渠道，同时尊重并保护所有游戏的知识产权。</p>
-            <!-- <div class="mt-4 flex items-center text-gray-700 text-sm">
-               <i class="fa fa-envelope-o mr-2 text-primary"></i>
-                <span>3578291279@qq.com</span> 
-            </div>-->
+            <p class="about-text">本网站提供各类精选游戏的下载服务，所有游戏均来自互联网公开资源整理。</p>
+            <p class="about-text">我们致力于为玩家提供便捷的游戏获取渠道，同时尊重并保护所有游戏的知识产权。</p>
         </section>
 
         <!-- 法律声明 -->
-        <section id="legal-notice" class="bg-gray-800 text-gray-300 p-4 rounded-xl text-xs">
-            <h3 class="text-lg font-bold text-white mb-3 flex items-center">
-                <i class="fa fa-gavel mr-2"></i>法律声明
+        <section id="legal-notice" class="legal-notice">
+            <h3 class="legal-title">
+                <i class="fa fa-gavel"></i>法律声明
             </h3>
-            <div class="space-y-2">
+            <div class="legal-content">
                 <p>1. 本网站仅提供游戏下载链接的二维码展示服务，所有游戏资源均来自互联网公开分享，网站不对资源内容本身承担责任。</p>
                 <p>2. 所有游戏的版权归原开发公司或原作者所有。本网站仅为方便用户查找和使用，不声明对任何游戏拥有版权。</p>
                 <p>3. 若您是游戏版权持有人，认为本网站展示的内容侵犯了您的合法权益，请联系我们（3578291279@qq.com），我们将在收到通知后24小时内移除相关内容。</p>
@@ -185,30 +482,11 @@
     </main>
 
     <!-- 页脚 -->
-    <footer class="bg-dark text-white py-6 mt-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-3 md:mb-0">
-                    <h3 class="text-lg font-bold flex items-center">
-                        <i class="fa fa-gamepad mr-2"></i>游戏下载中心
-                    </h3>
-                    <p class="text-gray-400 text-xs mt-1">提供安全可靠的游戏下载服务</p>
-                </div>
-                <div class="flex space-x-3">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
-                        <i class="fa fa-weibo"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
-                        <i class="fa fa-wechat"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors text-lg">
-                        <i class="fa fa-qq"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-4 pt-4 text-center text-gray-400 text-xs">
-                &copy; 2023 游戏下载中心 - <a href="#legal-notice" class="underline hover:text-white">查看法律声明</a>
-            </div>
+    <footer>
+        <div class="footer-container">
+            <h3 class="footer-logo">
+                <i class="fa fa-gamepad"></i>游戏下载中心
+            </h3>
         </div>
     </footer>
 
@@ -216,10 +494,10 @@
         // 等待DOM和数据都加载完成
         document.addEventListener('DOMContentLoaded', function() {
             // 检查数据是否加载成功
-            if (typeof allGames === 'undefined') {
+            if (typeof allGames === 'undefined' || !allGames.length) {
                 document.getElementById('featured-games-container').innerHTML = `
-                    <div class="col-span-4 text-center py-8 text-red-500">
-                        <i class="fa fa-exclamation-circle text-2xl mb-2"></i>
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 32px 0; color: #dc2626;">
+                        <i class="fa fa-exclamation-circle text-2xl margin-bottom: 8px;"></i>
                         <p>数据加载失败，请检查data.js文件是否存在</p>
                     </div>
                 `;
@@ -228,6 +506,9 @@
 
             // 加载热门游戏
             loadFeaturedGames();
+            
+            // 绑定分类卡片点击事件
+            bindCategoryCards();
         });
 
         // 加载热门游戏
@@ -240,8 +521,8 @@
             
             if (featuredGames.length === 0) {
                 container.innerHTML = `
-                    <div class="col-span-4 text-center py-8 text-gray-500">
-                        <i class="fa fa-star-o text-2xl mb-2"></i>
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 32px 0; color: #64748b;">
+                        <i class="fa fa-star-o text-2xl margin-bottom: 8px;"></i>
                         <p>暂无热门游戏推荐</p>
                     </div>
                 `;
@@ -261,39 +542,41 @@
                 const card = document.createElement('div');
                 card.className = 'game-card';
                 card.innerHTML = `
-                    <div class="p-2">
-                        <div class="bg-gray-100 p-2 flex justify-center aspect-square">
-                            <img src="${game.icon}" alt="${game.name}" class="rounded w-full h-full object-cover" 
+                    <div class="game-card-inner">
+                        <div class="featured-game-wrapper">
+                            <img src="${game.icon}" alt="${game.name}" class="featured-game-image" 
                                  onerror="this.src='https://picsum.photos/seed/default/200/200'">
                         </div>
-                        <h4 class="text-xs font-semibold mt-2 text-dark text-center truncate">${game.name}</h4>
-                        <div class="mt-1 flex justify-center">
-                            <span class="${config.class} text-xs px-1.5 py-0.5 rounded-full">${config.text}</span>
+                        <h4 class="game-name">${game.name}</h4>
+                        <div class="game-type-badge">
+                            <span class="badge ${config.class}">${config.text}</span>
                         </div>
                     </div>
                 `;
                 
+                // 点击跳转到详情页，使用ID参数
                 card.addEventListener('click', () => {
-                    localStorage.setItem('currentGame', JSON.stringify(game));
-                    window.location.href = 'detail.html';
+                    window.location.href = `detail.html?id=${game.id}`;
                 });
                 
                 container.appendChild(card);
             });
         }
 
-        // 分类卡片点击事件
-        document.querySelectorAll('.category-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const type = card.getAttribute('data-type');
-                window.location.href = `category.html?type=${type}`;
+        // 绑定分类卡片点击事件
+        function bindCategoryCards() {
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const type = card.getAttribute('data-type');
+                    window.location.href = `category.html?type=${type}`;
+                });
             });
-        });
+        }
 
         // 移动端菜单切换
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const nav = document.getElementById('mobile-menu');
-            nav.classList.toggle('hidden');
+            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
         });
 
         // 平滑滚动
@@ -308,4 +591,3 @@
     </script>
 </body>
 </html>
-    
