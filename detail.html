@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>游戏详情 - 游戏下载中心</title>
+    <title>游戏详情 - ZP游戏交流站</title>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- 先加载数据文件 -->
     <script src="data.js"></script>
@@ -248,7 +248,7 @@
             object-fit: contain;
         }
         
-        /* 二维码放大弹窗 */
+        /* 二维码放大弹窗 - 仅修改关闭按钮居中 */
         .qr-modal {
             position: fixed;
             top: 0;
@@ -279,6 +279,11 @@
             max-width: 100%;
             max-height: 70vh;
             margin-bottom: 16px;
+        }
+        /* 关闭按钮容器 - 仅用于居中按钮 */
+        .modal-close-container {
+            display: flex;
+            justify-content: center;
         }
         .close-modal {
             background: #3B82F6;
@@ -356,7 +361,7 @@
         <div class="container nav-container">
             <div class="logo">
                 <i class="fa fa-gamepad"></i>
-                <span>游戏下载中心</span>
+                <span>ZP游戏交流站</span>
             </div>
             <nav class="nav-links">
                 <a href="index.html" class="nav-link"><i class="fa fa-home"></i> 首页</a>
@@ -399,18 +404,21 @@
         </section>
     </div>
 
-    <!-- 二维码放大弹窗 -->
+    <!-- 二维码放大弹窗 - 关闭按钮添加居中容器 -->
     <div class="qr-modal" id="qr-modal">
         <div class="qr-modal-content">
             <h3 class="qr-modal-title" id="modal-game-title">扫码下载游戏</h3>
             <img src="" alt="放大的游戏下载二维码" class="qr-modal-image" id="modal-qr-image">
-            <button class="close-modal" id="close-modal">关闭</button>
+            <!-- 添加容器用于居中按钮 -->
+            <div class="modal-close-container">
+                <button class="close-modal" id="close-modal">关闭</button>
+            </div>
         </div>
     </div>
 
     <!-- 页脚 -->
     <footer class="footer">
-        &copy; 2023 游戏下载中心 - 所有游戏版权归原作者所有
+        &copy; 2023 ZP游戏交流站 - 所有游戏版权归原作者所有
     </footer>
 
     <script>
@@ -505,12 +513,6 @@
 
         // 渲染游戏详情信息
         function renderGameInfo(game) {
-            //const typeMap = {
-            //    'mobile': '手机游戏',
-            //    'pc': '电脑游戏',
-            //    'gentleman': '绅士游戏'
-            //};
-            
             // 构建截图区域HTML
             let screenshotsHtml = '';
             if (game.screenshots && game.screenshots.length > 0) {
