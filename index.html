@@ -261,6 +261,11 @@
             padding: 2px 6px;
             border-radius: 9999px;
         }
+        /* 固定“详情”徽章样式 */
+        .detail-badge {
+            background-color: #eff6ff;
+            color: #2563eb;
+        }
 
         /* 关于我们 */
         .about-section {
@@ -511,12 +516,10 @@
             bindCategoryCards();
         });
 
-        // 加载热门游戏
+        // 加载热门游戏（修改为显示固定"详情"标签）
         function loadFeaturedGames() {
-            // 从全局数据中筛选热门游戏
             const featuredGames = allGames.filter(game => game.isFeatured);
             const container = document.getElementById('featured-games-container');
-            
             container.innerHTML = '';
             
             if (featuredGames.length === 0) {
@@ -529,16 +532,8 @@
                 return;
             }
             
-            // 生成游戏卡片
             featuredGames.forEach(game => {
-                // 类型样式映射
-                const typeConfig = {
-                    'mobile': { class: 'bg-blue-100 text-blue-800', text: '手机' },
-                    'pc': { class: 'bg-green-100 text-green-800', text: '电脑' },
-                    'gentleman': { class: 'bg-purple-100 text-purple-800', text: '绅士' }
-                };
-                const config = typeConfig[game.type] || { class: 'bg-gray-100 text-gray-800', text: '未知' };
-                
+                // 生成游戏卡片，类型徽章固定为"详情"
                 const card = document.createElement('div');
                 card.className = 'game-card';
                 card.innerHTML = `
@@ -549,12 +544,12 @@
                         </div>
                         <h4 class="game-name">${game.name}</h4>
                         <div class="game-type-badge">
-                            <span class="badge ${config.class}">${config.text}</span>
+                            <span class="badge detail-badge">查看详情</span>
                         </div>
                     </div>
                 `;
                 
-                // 点击跳转到详情页，使用ID参数
+                // 点击跳转详情页
                 card.addEventListener('click', () => {
                     window.location.href = `detail.html?id=${game.id}`;
                 });

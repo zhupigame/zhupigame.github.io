@@ -253,161 +253,161 @@
     </section>
 
     <footer class="footer">
-        &copy; 2023 游戏下载中心 - 所有游戏版权归原作者所有
+        &copy; 2025 游戏下载中心 - 所有游戏版权归原作者所有
     </footer>
 
     <script>
-        // 与首页完全相同的数据加载逻辑
-        document.addEventListener('DOMContentLoaded', function() {
-            // 检查数据是否加载成功（与首页检查方式一致）
-            if (typeof allGames === 'undefined' || !Array.isArray(allGames) || allGames.length === 0) {
-                document.getElementById('game-list').innerHTML = `
-                    <div style="grid-column: 1 / -1;" class="error-message">
-                        <i class="fa fa-exclamation-circle" style="font-size: 24px; margin-bottom: 8px;"></i>
-                        <p>未加载到游戏数据，请检查data.js文件</p>
-                    </div>
-                `;
-                return;
-            }
+ document.addEventListener('DOMContentLoaded', function() {
+    // 数据检查（不变）
+    if (typeof allGames === 'undefined' || !Array.isArray(allGames) || allGames.length === 0) {
+        document.getElementById('game-list').innerHTML = `
+            <div style="grid-column: 1 / -1;" class="error-message">
+                <i class="fa fa-exclamation-circle" style="font-size: 24px; margin-bottom: 8px;"></i>
+                <p>未加载到游戏数据，请检查data.js文件</p>
+            </div>
+        `;
+        return;
+    }
 
-            // 页面状态
-            let currentPage = 1;
-            const gamesPerPage = 18;
-            let currentCategory = 'all';
-            let searchTerm = '';
+    // 页面状态（不变）
+    let currentPage = 1;
+    const gamesPerPage = 18;
+    let currentCategory = 'all';
+    let searchTerm = '';
 
-            // DOM元素
-            const gameListEl = document.getElementById('game-list');
-            const paginationEl = document.getElementById('pagination');
-            const categoryTitleEl = document.getElementById('category-title');
-            const searchInputEl = document.getElementById('search-input');
+    // DOM元素（不变）
+    const gameListEl = document.getElementById('game-list');
+    const paginationEl = document.getElementById('pagination');
+    const categoryTitleEl = document.getElementById('category-title');
+    const searchInputEl = document.getElementById('search-input');
 
-            // 初始化页面
-            init();
+    // 初始化（不变）
+    init();
 
-            function init() {
-                // 获取URL中的分类参数
-                const urlParams = new URLSearchParams(window.location.search);
-                currentCategory = urlParams.get('type') || 'all';
-                setCategoryTitle();
-                renderGameList();
-            }
+    function init() {
+        const urlParams = new URLSearchParams(window.location.search);
+        currentCategory = urlParams.get('type') || 'all';
+        setCategoryTitle();
+        renderGameList();
+    }
 
-            // 设置分类标题
-            function setCategoryTitle() {
-                const titleMap = {
-                    'all': '全部游戏',
-                    'mobile': '手机游戏',
-                    'pc': '电脑游戏',
-                    'gentleman': '绅士游戏'
-                };
-                categoryTitleEl.textContent = titleMap[currentCategory] || '全部游戏';
-            }
+    // 设置分类标题（不变）
+    function setCategoryTitle() {
+        const titleMap = {
+            'all': '全部游戏',
+            'mobile': '手机游戏',
+            'pc': '电脑游戏',
+            'gentleman': '绅士游戏'
+        };
+        categoryTitleEl.textContent = titleMap[currentCategory] || '全部游戏';
+    }
 
-            // 渲染游戏列表（与首页逻辑一致）
-            function renderGameList() {
-                // 从全局数据allGames中筛选游戏（与首页使用相同数据源）
-                const filteredGames = allGames.filter(game => {
-                    const isMatchCategory = currentCategory === 'all' || game.type === currentCategory;
-                    const isMatchSearch = searchTerm === '' || game.name.toLowerCase().includes(searchTerm);
-                    return isMatchCategory && isMatchSearch;
-                });
-
-                // 处理无结果的情况
-                if (filteredGames.length === 0) {
-                    gameListEl.innerHTML = `
-                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #999;">
-                            <i class="fa fa-search" style="font-size: 24px; margin-bottom: 8px;"></i>
-                            <p>没有找到匹配的游戏</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                // 分页处理
-                const totalPages = Math.ceil(filteredGames.length / gamesPerPage);
-                const startIdx = (currentPage - 1) * gamesPerPage;
-                const currentGames = filteredGames.slice(startIdx, startIdx + gamesPerPage);
-
-                // 生成游戏卡片（与首页卡片生成逻辑一致）
-                gameListEl.innerHTML = '';
-                currentGames.forEach(game => {
-                    const card = document.createElement('div');
-                    card.className = 'game-card';
-                    card.innerHTML = `
-                        <img src="${game.icon}" alt="${game.name}图标" class="game-icon" 
-                             onerror="this.src='https://picsum.photos/seed/error/200/200'">
-                        <div class="game-name">${game.name}</div>
-                    `;
-                    // 点击跳转详情页（与首页跳转方式一致）
-                    card.addEventListener('click', () => {
-                        window.location.href = `detail.html?id=${game.id}`;
-                    });
-                    gameListEl.appendChild(card);
-                });
-
-                // 渲染分页
-                renderPagination(totalPages);
-            }
-
-            // 渲染分页
-            function renderPagination(totalPages) {
-                paginationEl.innerHTML = '';
-                
-                if (totalPages <= 1) return;
-                
-                // 上一页
-                const prevBtn = document.createElement('button');
-                prevBtn.className = 'page-btn';
-                prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i> 上一页';
-                prevBtn.disabled = currentPage === 1;
-                prevBtn.addEventListener('click', () => {
-                    if (currentPage > 1) {
-                        currentPage--;
-                        renderGameList();
-                    }
-                });
-                paginationEl.appendChild(prevBtn);
-                
-                // 页码
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageBtn = document.createElement('button');
-                    pageBtn.className = `page-btn ${currentPage === i ? 'active' : ''}`;
-                    pageBtn.textContent = i;
-                    pageBtn.addEventListener('click', () => {
-                        currentPage = i;
-                        renderGameList();
-                    });
-                    paginationEl.appendChild(pageBtn);
-                }
-                
-                // 下一页
-                const nextBtn = document.createElement('button');
-                nextBtn.className = 'page-btn';
-                nextBtn.innerHTML = '下一页 <i class="fa fa-chevron-right"></i>';
-                nextBtn.disabled = currentPage === totalPages;
-                nextBtn.addEventListener('click', () => {
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        renderGameList();
-                    }
-                });
-                paginationEl.appendChild(nextBtn);
-            }
-
-            // 搜索功能
-            searchInputEl.addEventListener('input', (e) => {
-                searchTerm = e.target.value.trim().toLowerCase();
-                currentPage = 1;
-                renderGameList();
-            });
-
-            // 移动端菜单切换 - 修复了原代码中的ID错误
-            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-                const nav = document.getElementById('mobile-menu');
-                nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
-            });
+    // 【修改】渲染游戏列表（核心：多类型筛选逻辑）
+    function renderGameList() {
+        // 【关键修改】筛选逻辑：支持多类型数组包含匹配
+        const filteredGames = allGames.filter(game => {
+            // 处理游戏类型：确保转为数组（兼容单类型和多类型）
+            const gameTypes = Array.isArray(game.type) ? game.type : [game.type];
+            // 分类匹配：全部游戏/或游戏类型包含当前分类
+            const isMatchCategory = currentCategory === 'all' || gameTypes.includes(currentCategory);
+            // 搜索匹配（不变）
+            const isMatchSearch = searchTerm === '' || game.name.toLowerCase().includes(searchTerm);
+            return isMatchCategory && isMatchSearch;
         });
+
+        // 无结果处理（不变）
+        if (filteredGames.length === 0) {
+            gameListEl.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #999;">
+                    <i class="fa fa-search" style="font-size: 24px; margin-bottom: 8px;"></i>
+                    <p>没有找到匹配的游戏</p>
+                </div>
+            `;
+            return;
+        }
+
+        // 分页处理（不变）
+        const totalPages = Math.ceil(filteredGames.length / gamesPerPage);
+        const startIdx = (currentPage - 1) * gamesPerPage;
+        const currentGames = filteredGames.slice(startIdx, startIdx + gamesPerPage);
+
+        // 生成游戏卡片（不变）
+        gameListEl.innerHTML = '';
+        currentGames.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `
+                <img src="${game.icon}" alt="${game.name}图标" class="game-icon" 
+                     onerror="this.src='https://picsum.photos/seed/error/200/200'">
+                <div class="game-name">${game.name}</div>
+            `;
+            card.addEventListener('click', () => {
+                window.location.href = `detail.html?id=${game.id}`;
+            });
+            gameListEl.appendChild(card);
+        });
+
+        // 渲染分页（不变）
+        renderPagination(totalPages);
+    }
+
+    // 渲染分页（不变）
+    function renderPagination(totalPages) {
+        paginationEl.innerHTML = '';
+        if (totalPages <= 1) return;
+        
+        // 上一页（不变）
+        const prevBtn = document.createElement('button');
+        prevBtn.className = 'page-btn';
+        prevBtn.innerHTML = '<i class="fa fa-chevron-left"></i> 上一页';
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderGameList();
+            }
+        });
+        paginationEl.appendChild(prevBtn);
+        
+        // 页码（不变）
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = `page-btn ${currentPage === i ? 'active' : ''}`;
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => {
+                currentPage = i;
+                renderGameList();
+            });
+            paginationEl.appendChild(pageBtn);
+        }
+        
+        // 下一页（不变）
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'page-btn';
+        nextBtn.innerHTML = '下一页 <i class="fa fa-chevron-right"></i>';
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderGameList();
+            }
+        });
+        paginationEl.appendChild(nextBtn);
+    }
+
+    // 搜索功能（不变）
+    searchInputEl.addEventListener('input', (e) => {
+        searchTerm = e.target.value.trim().toLowerCase();
+        currentPage = 1;
+        renderGameList();
+    });
+
+    // 移动端菜单（不变）
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const nav = document.getElementById('mobile-menu');
+        nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+    });
+});
     </script>
 </body>
 </html>

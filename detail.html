@@ -166,6 +166,8 @@
             justify-content: center;
             color: #dc2626;
             font-size: 12px;
+            text-align: center;
+            padding: 10px;
         }
         .game-description {
             line-height: 1.6;
@@ -206,7 +208,7 @@
             background: #e2e8f0;
         }
         
-        /* 游戏截图区域 */
+        /* 游戏截图区域 - 核心调整：自适应高度 */
         .screenshots-section {
             margin-top: 32px;
         }
@@ -219,67 +221,31 @@
             align-items: center;
             gap: 8px;
         }
+        /* 截图网格：宽度固定400px，高度自适应 */
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 16px;
             margin-bottom: 24px;
         }
+        /* 截图容器：不固定高度，由图片自然撑开 */
         .screenshot-item {
             border-radius: 8px;
             overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s ease;
             background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 160px;
+            /* 移除固定高度，改为最小高度避免过矮 */
+            min-height: 200px;
         }
-        .screenshot-item:hover {
-            transform: scale(1.02);
-        }
+        /* 截图图片：宽度固定400px，高度自适应原比例 */
         .screenshot-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* 截图预览弹窗 */
-        .screenshot-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .screenshot-modal-content {
-            max-width: 90%;
-            max-height: 90vh;
-            position: relative;
-        }
-        .modal-img {
-            max-width: 100%;
-            max-height: 90vh;
-            border: 4px solid white;
-            border-radius: 4px;
-        }
-        .close-screenshot {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
+            /* 高度自适应，保持原比例 */
+            height: auto;
+            /* 确保图片完全显示，不裁剪 */
+            object-fit: contain;
         }
         
         /* 二维码放大弹窗 */
@@ -338,7 +304,7 @@
             display: none;
         }
         
-        /* 移动端适配 */
+        /* 移动端适配：宽度100%，高度自适应 */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -370,11 +336,16 @@
             .btn {
                 width: 100%;
             }
+            /* 移动端截图网格：宽度100%，高度自适应 */
             .screenshots-grid {
                 grid-template-columns: 1fr;
             }
             .screenshot-item {
-                height: 140px;
+                min-height: 150px;
+            }
+            .screenshot-img {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -437,14 +408,6 @@
         </div>
     </div>
 
-    <!-- 截图预览弹窗 -->
-    <div class="screenshot-modal" id="screenshot-modal">
-        <div class="screenshot-modal-content">
-            <button class="close-screenshot" id="close-screenshot">×</button>
-            <img src="" alt="游戏截图预览" class="modal-img" id="modal-screenshot-img">
-        </div>
-    </div>
-
     <!-- 页脚 -->
     <footer class="footer">
         &copy; 2023 游戏下载中心 - 所有游戏版权归原作者所有
@@ -472,18 +435,6 @@
             }
         });
         
-        // 关闭截图弹窗
-        document.getElementById('close-screenshot').addEventListener('click', function() {
-            document.getElementById('screenshot-modal').style.display = 'none';
-        });
-        
-        // 点击截图弹窗外部关闭
-        document.getElementById('screenshot-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-            }
-        });
-        
         // 点击扫码下载按钮显示弹窗
         document.addEventListener('click', function(e) {
             if (e.target.closest('.btn-primary') && currentGame) {
@@ -505,21 +456,6 @@
             modalImage.onerror = function() {
                 this.src = `https://picsum.photos/seed/qr${currentGame.id}/300/300`;
                 this.alt = '二维码加载失败';
-            };
-            
-            modal.style.display = 'flex';
-        }
-
-        // 显示截图弹窗
-        function showScreenshotModal(src, gameId) {
-            const modal = document.getElementById('screenshot-modal');
-            const modalImg = document.getElementById('modal-screenshot-img');
-            
-            modalImg.src = src;
-            modalImg.alt = '游戏截图预览';
-            modalImg.onerror = function() {
-                this.src = `https://picsum.photos/seed/shot${gameId}/800/450`;
-                this.alt = '截图加载失败';
             };
             
             modal.style.display = 'flex';
@@ -569,11 +505,11 @@
 
         // 渲染游戏详情信息
         function renderGameInfo(game) {
-            const typeMap = {
-                'mobile': '手机游戏',
-                'pc': '电脑游戏',
-                'gentleman': '绅士游戏'
-            };
+            //const typeMap = {
+            //    'mobile': '手机游戏',
+            //    'pc': '电脑游戏',
+            //    'gentleman': '绅士游戏'
+            //};
             
             // 构建截图区域HTML
             let screenshotsHtml = '';
@@ -585,9 +521,9 @@
                         </h3>
                         <div class="screenshots-grid">
                             ${game.screenshots.map((shot, index) => `
-                                <div class="screenshot-item" onclick="showScreenshotModal('${shot}', ${game.id})">
+                                <div class="screenshot-item">
                                     <img src="${shot}" alt="${game.name}游戏截图 ${index+1}" class="screenshot-img"
-                                         onerror="this.classList.add('error'); this.src='https://picsum.photos/seed/shot${game.id}${index}/400/225'; this.alt='截图加载失败';">
+                                         onerror="this.classList.add('error'); this.src='https://picsum.photos/seed/shot${game.id}${index}/400/300'; this.alt='截图加载失败';">
                                 </div>
                             `).join('')}
                         </div>
@@ -617,7 +553,7 @@
                         <div class="game-meta">
                             <div class="meta-item">
                                 <i class="fa fa-gamepad"></i>
-                                <span>类型：${typeMap[game.type] || '未知'}</span>
+                                <span>类型：${'游戏' || '未知'}</span>
                             </div>
                             <div class="meta-item">
                                 <i class="fa fa-download"></i>
@@ -669,3 +605,4 @@
     </script>
 </body>
 </html>
+    
