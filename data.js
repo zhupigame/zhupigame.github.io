@@ -6,8 +6,7 @@ const allGames = [
         type: ["mobile","pc","gentleman"], 
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,
-        icon: "./images/icons/1.png",
-        mainImage: "./images/icons/1.png",       
+        icon: "./images/icons/1.png",  
         screenshots: [
             "./images/screenshots/1/1.jpg",
             "./images/screenshots/1/2.jpg"
@@ -40,7 +39,6 @@ const allGames = [
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true, 
         icon: "./images/icons/2.png",
-        mainImage: "./images/icons/2.png",
         screenshots: [
             "./images/screenshots/2/1.jpg",
             "./images/screenshots/2/2.jpg",
@@ -78,8 +76,7 @@ const allGames = [
         type: ["mobile","gentleman"], 
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,  
-        icon: "./images/icons/3.png",
-        mainImage: "./images/icons/3.png",       
+        icon: "./images/icons/3.png",     
         screenshots: [
             "./images/screenshots/3/1.jpg",
             "./images/screenshots/3/2.jpg",
@@ -112,7 +109,6 @@ const allGames = [
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,  
         icon: "./images/icons/4.png",
-        mainImage: "./images/icons/4.png",
         screenshots: [
             "./images/screenshots/4/1.jpg",
             "./images/screenshots/4/2.jpg",
@@ -130,7 +126,6 @@ const allGames = [
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,
         icon: "./images/icons/5.png",
-        mainImage: "./images/icons/5.png", 
         screenshots: [
             "./images/screenshots/5/1.jpg",
             "./images/screenshots/5/2.jpg"
@@ -176,7 +171,6 @@ const allGames = [
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,
         icon: "./images/icons/6.png",
-        mainImage: "./images/icons/6.png",   
         screenshots: [
             "./images/screenshots/6/1.jpg",
             "./images/screenshots/6/2.jpg"
@@ -200,14 +194,13 @@ const allGames = [
         version: "0.7.5",
         updateDate: "2025-09-29"
     },
-	    { 
+	{ 
         id: 7, 
         name: "魔女的侵袭", 
         type: ["mobile","pc","gentleman"], 
 		qrCode: "./images/qrcodes/1.jpg",
         isFeatured: true,
         icon: "./images/icons/7.png",
-        mainImage: "./images/icons/7.png",   
         screenshots: [
             "./images/screenshots/7/1.jpg",
             "./images/screenshots/7/2.jpg"
@@ -231,9 +224,175 @@ const allGames = [
 		3、全3D动态场景：游戏将玩家带入全3D动态场景中，细致精美的画面设计让游戏更加生动逼真。
 		<br>
 		4、丰富的角色和道具：游戏中设有多种角色和道具可供玩家选择和使用，增加游戏可玩性。`,
-		size: "3.7GB",
-        version: "0.7.5",
+		size: "1.7GB",
+        version: "0.8.5",
         updateDate: "2025-09-29"
     },
 
+		{ 
+        id: 8, 
+        name: "爱丽丝的摇篮", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: true,
+        icon: "./images/icons/8.png",
+        screenshots: [
+            "./images/screenshots/8/1.jpg",
+            "./images/screenshots/8/2.jpg"
+        ],
+    description: `爱丽丝的摇篮支持中文，融合了魔法战斗、谜题解答与剧情探索。游戏采用精美的二次元画风、剧情丰富，玩家将扮演诺艾尔，在充满危险与奇迹的梦境中展开冒险，需利用魔法与武器击败怪物，解开古老谜题，逐步揭开故事的真相。!
+        <br><br>
+        <span style="color:#3B82F6;font-weight:bold">1、游戏特色</span>
+        <br>
+        游戏采用了非常细腻和迷人的像素画风，角色动作流畅，场景细节丰富，配合出色的光影效果和音乐，成功营造了一个既美丽又神秘的奇幻世界氛围。`,
+		size: "1.1GB",
+        version: "0.7.9",
+        updateDate: "2025-09-29"
+    },
+		{ 
+        id: 9, 
+        name: "古式按摩店", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: true,
+        icon: "./images/icons/9.png",
+        screenshots: [
+            "./images/screenshots/9/1.jpg",
+            "./images/screenshots/9/2.jpg"
+        ],
+    description: `非常火爆的游戏，游戏有着认真的经营养成玩法，玩家从一开始只有浩太亲自上阵服务客人的状态下想办法发展。尽可能在每天营业的时间招来更多客源，并且透过招募员工来壮大店内的生意。地图场景众多，背景音效表现得非常好，令人身临其境，在独创的世界中展开新的冒险故事。!`,
+		size: "587MB",
+        version: "1.7.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 10, 
+        name: "存在感薄弱的妹妹", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: true,
+        icon: "./images/icons/10.png",
+        screenshots: [
+            "./images/screenshots/10/1.jpg",
+            "./images/screenshots/10/2.jpg"
+        ],
+    description: `玩家在与妹妹一起生活的同时，在地下城里扮演独自冒险者。为了治愈妹妹特殊的体质，玩家不断地寻找用于制作万能药剂“红髓液”所需的材料。如果在规定时间内无法完成，妹妹将会…回到家冒险后，玩家会与妹妹共度宝贵时光。用收集到的食材为妹妹做饭，分享冒险的故事，一起玩游戏或一起睡觉。!`,
+		size: "642MB",
+        version: "1.5.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 11, 
+        name: "管理员的窥视", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/11.png",
+        screenshots: [
+            "./images/screenshots/11/1.jpg",
+            "./images/screenshots/11/2.jpg"
+        ],
+    description: `一款以偷窥为主题的角色扮演类解谜游戏，主角将扮演大学女子宿舍的管理员平日修缮、清洁宿舍，同时你可以利用职务之便，装设针孔摄影机进行偷拍、偷听搜集隐私，进而推进攻略女主角。立体多样的人物设计，不管是从人物的内心刻画还是场景建模，都是一件完美的艺术品，让我们陶醉其中。地图场景众多，背景音效表现得非常好，令人身临其境，在独创的世界中展开新的冒险故事。!`,
+		size: "837MB",
+        version: "1.5.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 12, 
+        name: "护身术道场", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/12.png",
+        screenshots: [
+            "./images/screenshots/12/1.jpg",
+            "./images/screenshots/12/2.jpg"
+        ],
+    description: `护身术道场以其出色的画质和独特画风脱颖而出。作为“黄毛视角”的ntr游戏，其像素画质相较于前辈们有了显著提升，同时，丰富的游戏内容和独特的攻略方式也深受玩家喜爱。通过攻略获得道具解锁更多内容，让玩家在享受游戏的同时，也能感受到策略与智慧的碰撞。!`,
+		size: "967MB",
+        version: "1.5.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 13, 
+        name: "姐姐的逃离", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/13.png",
+        screenshots: [
+            "./images/screenshots/13/1.jpg",
+            "./images/screenshots/13/2.jpg"
+        ],
+    description: ``,
+		size: "967MB",
+        version: "2.5.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 14, 
+        name: "魔物少女征服记", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/14.png",
+        screenshots: [
+            "./images/screenshots/14/1.jpg",
+            "./images/screenshots/14/2.jpg"
+        ],
+    description: `游戏内容丰富，包含多种超高质量的社保动态CG，由11名插画师共同绘制，5名CV小姐姐提供超过2000句全程语音。文本质量上乘，绝对值得体验。`,
+		size: "597MB",
+        version: "1.1.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 15, 
+        name: "路人娘电车", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/15.png",
+        screenshots: [
+            "./images/screenshots/15/1.jpg",
+            "./images/screenshots/15/2.jpg"
+        ],
+    description: `扮演电车检票员进行三要素核验：车票线路匹配度→身份证人证比对→随身物品安全检查。‌累计正确检查可解锁爱心值，触发乘客深度互动模式（含服装/外貌自定义功能）。违规判定标准含：跨线乘车/危险品携带/票证信息不符等情形。‌`,
+		size: "597MB",
+        version: "1.1.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 16, 
+        name: "梦想的约束", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/16.png",
+        screenshots: [
+            "./images/screenshots/16/1.jpg",
+            "./images/screenshots/16/2.jpg"
+        ],
+    description: `游戏中，玩家将扮演一名经纪人，肩负起培养新人偶像“艾莉”的重任。通过多样化的训练和互动，玩家帮助艾莉从一名普通少女蜕变为光芒四射的顶级偶像。游戏围绕艾莉与其男友“哈利”的情感故事展开，剧情充满戏剧性与冲突感，令人无法自拔‌`,
+		size: "597MB",
+        version: "1.1.5",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 17, 
+        name: "蘑菇岛打工日记", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/17.png",
+        screenshots: [
+            "./images/screenshots/17/1.jpg",
+            "./images/screenshots/17/2.jpg"
+        ],
+    description: `拓海是个啃老族，毕业后一直找不到工作，整天游手好闲。某天经朋友介绍，来到一座小岛上打工。据说那里的报酬相当丰厚。就这样，他的打工生活开始了。‌`,
+		size: "597MB",
+        version: "1.1.2",
+        updateDate: "2025-09-29"
+    },
+	
+	
 ];
