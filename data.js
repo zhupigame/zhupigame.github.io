@@ -393,6 +393,35 @@ const allGames = [
         version: "1.1.2",
         updateDate: "2025-09-29"
     },
+	{ 
+        id: 18, 
+        name: "催眠", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/18.png",
+        screenshots: [
+        ],
+    description: `‌一款专为提升用户专注力和放松心情而设计的应用程序。它通过独特的催眠技术和声音疗法，帮助用户在短时间内达到深度放松状态，从而缓解压力、改善睡眠质量。无论是工作繁忙的白领，还是学习压力大的学生，HypnoApp2都能提供个性化的放松体验。`,
+		size: "597MB",
+        version: "",
+        updateDate: "2025-09-29"
+    },
+	{ 
+        id: 19, 
+        name: "导演人生", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/1.jpg",
+        isFeatured: false,
+        icon: "./images/icons/19.png",
+        screenshots: [
+        ],
+    description: `‌这款游戏是一款模拟器，你可以在其中自由拍摄、剪辑并销售影片制作。主角因偿还债务的需求，与女主角姬宫和泉携手，共同探索多种创意场景！随着游戏的进行，解锁新的拍摄地点，并利用各种道具来创造杰作！`,
+		size: "",
+        version: "",
+        updateDate: "2025-09-29"
+    },
+	
 	
 	
 ];

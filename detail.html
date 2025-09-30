@@ -513,9 +513,10 @@
 
         // 渲染游戏详情信息
         function renderGameInfo(game) {
-            // 构建截图区域HTML
+            // 构建截图区域HTML：无截图时仅显示文字，有截图时正常渲染（且移除默认图）
             let screenshotsHtml = '';
             if (game.screenshots && game.screenshots.length > 0) {
+                // 有截图：正常渲染，删除 onerror 中的默认图链接
                 screenshotsHtml = `
                     <div class="screenshots-section">
                         <h3 class="section-title">
@@ -525,19 +526,20 @@
                             ${game.screenshots.map((shot, index) => `
                                 <div class="screenshot-item">
                                     <img src="${shot}" alt="${game.name}游戏截图 ${index+1}" class="screenshot-img"
-                                         onerror="this.classList.add('error'); this.src='https://picsum.photos/seed/shot${game.id}${index}/400/300'; this.alt='截图加载失败';">
+                                         onerror="this.classList.add('error'); this.alt='截图加载失败'; this.textContent='截图加载失败';">
                                 </div>
                             `).join('')}
                         </div>
                     </div>
                 `;
             } else {
+                // 无截图：仅显示“暂无游戏截图”文字，不添加任何图片
                 screenshotsHtml = `
                     <div class="screenshots-section">
                         <h3 class="section-title">
                             <i class="fa fa-picture-o"></i>游戏截图
                         </h3>
-                        <p style="color: #666; font-size: 14px;">暂无游戏截图</p>
+                        <p style="color: #666; font-size: 14px; padding: 20px 0;">暂无游戏截图</p>
                     </div>
                 `;
             }
