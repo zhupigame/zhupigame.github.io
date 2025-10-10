@@ -4,7 +4,7 @@ const allGames = [
         id: 1, 
         name: "塞雷卡2", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/1.png",  
         screenshots: [
@@ -36,7 +36,7 @@ const allGames = [
         id: 2, 
         name: "罗克珊", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true, 
         icon: "./images/icons/2.png",
         screenshots: [
@@ -74,7 +74,7 @@ const allGames = [
         id: 3, 
         name: "时间静止-重返校园", 
         type: ["mobile","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,  
         icon: "./images/icons/3.png",     
         screenshots: [
@@ -106,7 +106,7 @@ const allGames = [
         id: 4, 
         name: "白色情人节-恐怖学校", 
         type: ["mobile"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,  
         icon: "./images/icons/4.png",
         screenshots: [
@@ -123,7 +123,7 @@ const allGames = [
         id: 5, 
         name: "爬行实验室", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/5.png",
         screenshots: [
@@ -168,7 +168,7 @@ const allGames = [
         id: 6, 
         name: "棘罪修女", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/6.png",
         screenshots: [
@@ -198,7 +198,7 @@ const allGames = [
         id: 7, 
         name: "魔女的侵袭", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/7.png",
         screenshots: [
@@ -233,7 +233,7 @@ const allGames = [
         id: 8, 
         name: "爱丽丝的摇篮", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/8.png",
         screenshots: [
@@ -253,7 +253,7 @@ const allGames = [
         id: 9, 
         name: "古式按摩店", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/9.png",
         screenshots: [
@@ -269,7 +269,7 @@ const allGames = [
         id: 10, 
         name: "存在感薄弱的妹妹", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: true,
         icon: "./images/icons/10.png",
         screenshots: [
@@ -285,7 +285,7 @@ const allGames = [
         id: 11, 
         name: "管理员的窥视", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/11.png",
         screenshots: [
@@ -301,7 +301,7 @@ const allGames = [
         id: 12, 
         name: "护身术道场", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/12.png",
         screenshots: [
@@ -317,7 +317,7 @@ const allGames = [
         id: 13, 
         name: "姐姐的逃离", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/13.png",
         screenshots: [
@@ -333,7 +333,7 @@ const allGames = [
         id: 14, 
         name: "魔物少女征服记", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/14.png",
         screenshots: [
@@ -349,7 +349,7 @@ const allGames = [
         id: 15, 
         name: "路人娘电车", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/15.png",
         screenshots: [
@@ -365,7 +365,7 @@ const allGames = [
         id: 16, 
         name: "梦想的约束", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/16.png",
         screenshots: [
@@ -381,7 +381,7 @@ const allGames = [
         id: 17, 
         name: "蘑菇岛打工日记", 
         type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/17.png",
         screenshots: [
@@ -397,7 +397,7 @@ const allGames = [
         id: 18, 
         name: "催眠", 
         type: ["mobile"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/18.png",
         screenshots: [
@@ -411,7 +411,7 @@ const allGames = [
         id: 19, 
         name: "导演人生", 
         type: ["mobile"], 
-		qrCode: "./images/qrcodes/1.jpg",
+		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
         icon: "./images/icons/19.png",
         screenshots: [
