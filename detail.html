@@ -458,7 +458,7 @@
             const modalTitle = document.getElementById('modal-game-title');
             const modalImage = document.getElementById('modal-qr-image');
             
-            modalTitle.textContent = `扫码下载 ${currentGame.name}`;
+            modalTitle.textContent = `用迅雷APP扫码下载 ${currentGame.name}`;
             modalImage.src = currentGame.qrCode;
             modalImage.alt = `${currentGame.name}下载二维码`;
             modalImage.onerror = function() {
@@ -576,7 +576,7 @@
                         <div class="action-and-qr">
                             <div class="action-buttons">
                                 <button class="btn btn-primary">
-                                    <i class="fa fa-qrcode"></i> 扫码下载
+                                    <i class="fa fa-qrcode"></i> 用迅雷APP扫码下载
                                 </button>
                             </div>
                             
