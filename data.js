@@ -421,7 +421,94 @@ const allGames = [
         version: "",
         updateDate: "2025-09-29"
     },
-	
-	
-	
+	{ 
+        id: 20, 
+        name: "青色大脑", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/20.png",
+        screenshots: [
+		"./images/screenshots/20/1.jpg",
+        ],
+    description: `‌在神秘的神经网络中自由探索，发现隐藏的记忆碎片，每个区域都有独特的解谜挑战。精心设计的音效与光影效果，营造出令人窒息的恐怖氛围。每一个细节都经过精心雕琢，让您完全沉浸在紧张刺激的游戏体验中。`,
+		size: "700MB+",
+        version: "0.4.0",
+        updateDate: "2025-10-10"
+    },
+	{ 
+        id: 21, 
+        name: "圣骑士莉卡物语", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/21.png",
+        screenshots: [
+		"./images/screenshots/21/1.jpg",
+        ],
+    description: `‌一款制作非常精良的二次元美少女横版战斗闯关游戏，在这款游戏中玩家可以操纵自己的角色，在广阔丰富的地图场景等待玩家来探索，体验更加丰富的游戏内容，而且在这款游戏中还有充满奇幻色彩的游戏剧情等待玩家来体验，战斗动作也十分流畅，技能特效也非常出色，极大的提升了玩家的战斗体验，对此感兴趣玩家一定不要错过。`,
+		size: "200MB+",
+        version: "v1.0.148",
+        updateDate: "2025-10-10"
+    },
+	{ 
+        id: 22, 
+        name: "欲望寻魂", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/22.png",
+        screenshots: [
+		"./images/screenshots/22/1.jpg",
+        ],
+    description: `‌游戏中，你将化身为泰德，一位身怀绝技的鬼猎人。你的任务是追踪并降伏各式各样的鬼魂，深入探究他们的故事。 除了独自面对挑战，你还可以寻求助手露娜的指导，游戏内置的CV让鬼魂的声音更加生动有趣，而猎奇的地理位置也将带你领略前所未有的冒险体验。`,
+		size: "200MB+",
+        version: "",
+        updateDate: "2025-10-10"
+    },
+	{ 
+        id: 23, 
+        name: "像素男友", 
+        type: ["mobile","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/23.png",
+        screenshots: [
+		"./images/screenshots/23/1.jpg",
+        ],
+    description: `‌一款乙女向恋爱养成类文字游戏。游戏设定中玩家因诅咒只能看到低分辨率角色立绘，需通过提升好感度逐步解锁清晰图像。包含9位可攻略角色，需在3个月内完成攻略。`,
+		size: "100MB+",
+        version: "1.04",
+        updateDate: "2025-10-11"
+    },
+	{ 
+        id: 24, 
+        name: "家出少女", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/24.png",
+        screenshots: [
+		"./images/screenshots/24/1.jpg",
+        ],
+    description: `‌一款非常适合广大玩家们游玩的文字恋爱游戏，讲述一个离家出走的少女和男主相遇的故事，故事的走向全部由玩家自己选择，带来丰富且自由的剧情游戏体验，到底你能否和故事中的女孩发展出更深一层的关系，全看你自己的选择了，感兴趣的玩家快来试试吧。`,
+		size: "200MB+",
+        version: "1.04",
+        updateDate: "2025-10-11"
+    },
+	{ 
+        id: 25, 
+        name: "极品采花郎", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/25.png",
+        screenshots: [
+		"./images/screenshots/25/1.jpg",
+        ],
+    description: `极品采花郎是一款国风3D探索冒险的游戏，游戏中采用了开放的世界，还能和非常多的游戏角色互动，可以领取各种不同的任务来完成，典型的穿越剧情，为了重返现实生活，你必须达成一些特定的条件。多位可攻略的女性角色！`,
+		size: "5GB+",
+        version: "2.0",
+        updateDate: "2025-10-11"
+    },
 ];
