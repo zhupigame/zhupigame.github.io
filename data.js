@@ -511,4 +511,130 @@ const allGames = [
         version: "2.0",
         updateDate: "2025-10-11"
     },
+	{ 
+        id: 26, 
+        name: "时停之王", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/26.png",
+        screenshots: [
+		"./images/screenshots/26/1.jpg",
+        ],
+    description: `大致讲一位美少女放学回家必经之路上，疑似遇到一位靓仔尾随，美少女不敢确定靓仔是好人坏人，只能偶尔回头望一下，那么美少女能成功安全回家么？
+				<br>
+				跟踪美少女在没人的地方互动。互动时注意路人和警察。剩下更多玩法自行探索吧。`,
+		size: "2GB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 27, 
+        name: "盛世天下", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/27.png",
+        screenshots: [
+		"./images/screenshots/27/1.jpg",
+        ],
+    description: `从一个默默无闻的新人成为权力巅峰的盛朝女皇，在命悬一线的杀局中破局重生、酣畅复仇！在这里，宫廷生存挑战，你能活到第几集？能互动的爽剧，等你来演两集！`,
+		size: "300MB+",
+        version: "1.03",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 28, 
+        name: "甜蜜女友3", 
+        type: ["mobile","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/28.png",
+        screenshots: [
+		"./images/screenshots/28/1.jpg",
+        ],
+    description: `故事讲的是男主住进一座女子宿舍，帮祖母管理宿舍，因此邂逅了五位性格迥异的美丽女主,游戏以大海与群山环绕的温泉小镇为舞台，加入海水浴场等场景，美少女的泳装、浴衣身姿自然少不了。`,
+		size: "2GB+",
+        version: "1.03",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 29, 
+        name: "挑战莉莉酱", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/29.png",
+        screenshots: [
+		"./images/screenshots/29/1.jpg",
+        ],
+    description: `游戏设定在近未来一座被封锁的“第一区”，这里高楼林立、地下铁错综复杂，还有废弃实验室隐匿其中。AI控制的机械哨兵与残余人类势力各据一方，玩家有72小时的限时撤离机会，地图内昼夜交替、天气实时变化，一旦断电，整个区域会陷入黑暗与混乱。`,
+		size: "2GB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 30, 
+        name: "虚拟少女开发计划", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/30.png",
+        screenshots: [
+		"./images/screenshots/30/1.jpg",
+        ],
+    description: `这是一款互动SLG游戏，玩家可以在其中通过点击角色的手，巧妙地引导她到达指定的位置。玩家可以与虚拟少女进行丰富的互动，让你的游戏体验充满乐趣。在游戏中，你可以与虚拟少女展开深度互动，探索游戏世界！`,
+		size: "700MB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 31, 
+        name: "少女的求生之路", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/31.png",
+        screenshots: [         
+		"./images/screenshots/31/1.jpg",
+        ],
+    description: `这是一款末世RPG冒险生存类游戏,玩家需要扮演末世中努力求生的少女。 为了和众多怪物对战,少女突然拥有了变身魔法少女的能力! 因为物资匮乏,主角或许只能用一些“奇怪”的材料制作“奇怪”的食物。`,
+		size: "900MB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 32, 
+        name: "逃离家暴", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/32.png",
+        screenshots: [         
+		"./images/screenshots/32/1.jpg",
+        ],
+    description: `一款非常火爆的冒险解谜逃脱类手游，以学生逃离家暴父母作为主题，采用3D第一人称视角，营造出沉浸式的逃脱体验，还拥有丰富的解谜元素、多样的逃脱路线以及高度自由的探索玩法让玩家在紧张刺激的逃脱过程中，充分锻炼观察力、逻辑思维和应变能力，享受解谜带来的乐趣。`,
+		size: "200MB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+	{ 
+        id: 33, 
+        name: "狼伴侣", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/33.png",
+        screenshots: [         
+		"./images/screenshots/33/1.jpg",
+        ],
+    description: `一款校园题材的解谜逃生游戏。玩家扮演的转校生邂逅了芙蕾雅，因老师的差事深夜回到学校时，芙蕾雅变成狼女开始追逐玩家。游戏有20种不同结局，融合了剧情和解谜玩法。玩家需要躲避芙蕾雅的追击，寻找学校中的重要道具，还可灵活利用身边物品吸引芙蕾雅的注意力，从而顺利逃出学校。`,
+		size: "2000MB+",
+        version: "",
+        updateDate: "2025-10-13"
+    },
+
 ];
+
+
+
