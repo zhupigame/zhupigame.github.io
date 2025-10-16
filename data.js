@@ -633,6 +633,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-13"
     },
+	{ 
+        id: 34, 
+        name: "夏音公寓", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/34.png",
+        screenshots: [         
+		"./images/screenshots/34/1.jpg",
+        ],
+    description: `一款端游移植的角色扮演恋爱模拟游戏。扮演一个普通的学生，生活似乎很平凡，但随着同学的到来，你的世界开始微妙地改变。那天，学生突然决定回家，她带着一种神秘和不确定的感觉回来。你以为这只是一个简单的同学派对，但她的笑容，她的目光，每一个细节都加快了你的心。`,
+		size: "2000MB+",
+        version: "",
+        updateDate: "2025-10-17"
+    },
 
 ];
 
