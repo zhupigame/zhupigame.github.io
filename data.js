@@ -648,7 +648,36 @@ const allGames = [
         version: "",
         updateDate: "2025-10-17"
     },
-
+	{ 
+        id: 35, 
+        name: "别对我过分着迷", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/35.png",
+        screenshots: [         
+		"./images/screenshots/35/1.jpg",
+        ],
+    description: `一款以病娇题材为主的互动叙事游戏，在这款游戏中，玩家将扮演主角，与多位性格迥异的角色展开互动，通过对话和事件分支推动剧情发展。玩家需要根据角色性格和场景选择行动方案，不同的选择会影响角色的命运，游戏包含黑圆满结局和悲剧结局等多种结局。`,
+		size: "200MB+",
+        version: "1.0",
+        updateDate: "2025-10-17"
+    },
+	{ 
+        id: 36, 
+        name: "赤莲忍法帖", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/36.png",
+        screenshots: [         
+		"./images/screenshots/36/1.jpg",
+        ],
+    description: `一款忍者格斗题材的剧情游戏，玩家在游戏中扮演赤莲忍者，通过独特的忍法帖系统释放技能，体验水墨风格的忍术对决，游戏包含连招组合、忍术切换等核心玩法，并已推出多个DLC角色。`,
+		size: "200MB+",
+        version: "1.0",
+        updateDate: "2025-10-17"
+    },
 ];
 
 
