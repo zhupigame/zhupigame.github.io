@@ -678,6 +678,21 @@ const allGames = [
         version: "1.0",
         updateDate: "2025-10-17"
     },
+	{ 
+        id: 37, 
+        name: "办公室牛人", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/37.png",
+        screenshots: [         
+		"./images/screenshots/37/1.jpg",
+        ],
+    description: `一款欧美风SLG类游戏。这是一本几乎完全由女性经营的高调时尚杂志。但 HauteBeat 不仅仅只有光鲜的封面和截止日期。办公室里挤满了自信、迷人的女性——每个人都是挑战，每个人都有自己的欲望和秘密。对于我们的主角——仍然是处男并且完全没有准备——说，这次实习可能是他一生中最紧张的教育。你做的每一个决定都会影响他的道路：有多条路线和分支选择，由你来决定我们主角的故事的结局，因为他一头扎进了残酷的时尚界。欲望、诱惑和错综复杂的关系在等待着他，但主要的问题是：在他HauteBeat的任期结束时，他会被这些女人征服……还是会崛起并将她们全部据为己有？`,
+		size: "1500MB+",
+        version: "0.5",
+        updateDate: "2025-10-18"
+    },
 ];
 
 
