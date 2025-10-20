@@ -693,6 +693,23 @@ const allGames = [
         version: "0.5",
         updateDate: "2025-10-18"
     },
+		{ 
+        id: 38, 
+        name: "隔壁人妻2", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/38.png",
+        screenshots: [         
+		"./images/screenshots/38/1.jpg",
+        ],
+    description: `这是一款采用视觉小说结合可操作漫画玩法的游戏，‌‌通过日常互动（逐步拉近主角与邻居人妻的距离，铺垫情感或冲突。例主角偶然帮助对方解决家庭问题，触发后续发展。从暧昧对话到肢体接触，分阶段推进关系，增强代入感。
+`,
+		size: "1500MB+",
+        version: "",
+        updateDate: "2025-10-20"
+    },
+
 ];
 
 
