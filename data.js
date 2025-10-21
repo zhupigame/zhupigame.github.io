@@ -709,6 +709,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-20"
     },
+		{ 
+        id: 39, 
+        name: "闹鬼港湾", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/39.png",
+        screenshots: [         
+		"./images/screenshots/39/1.jpg",
+        ],
+    description: `作为一名专业的驱鬼猎人，你被雇佣来制服一群制造麻烦的魅魔。你并不是最理想的人选……但你是老板唯一能联系到的。其他所有猎人和驱魔师都已经失败了任务，被魅魔的诱惑技巧彻底拿下。为了不被炒鱿鱼，你得确保能制服（并上）所有在这座鬼屋中出没的魅魔——而且不能被发现。`,
+		size: "1500MB+",
+        version: "",
+        updateDate: "2025-10-21"
+    },
 
 ];
 
