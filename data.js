@@ -724,6 +724,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-21"
     },
+	{ 
+        id: 40, 
+        name: "夏色泡影", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/40.png",
+        screenshots: [         
+		"./images/screenshots/40/1.jpg",
+        ],
+    description: `夏色泡影是一款以校园恋爱为背景的视觉小说角色扮演游戏，玩家需与女主角交流、关注和给予支持，通过解决难题和收集隐藏物品逐渐揭示故事背后的秘密，并通过活动加深彼此了解。游戏特色在于倾听女主角心声、与其他追求者保持良好关系，并表达真实感情。通过精美的立绘和剧情，夏色泡影给玩家体验多个女主角之间纯爱故事的机会。`,
+		size: "1200MB+",
+        version: "0.3",
+        updateDate: "2025-10-20"
+    },
 
 ];
 
