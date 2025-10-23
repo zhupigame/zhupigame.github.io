@@ -739,6 +739,21 @@ const allGames = [
         version: "0.3",
         updateDate: "2025-10-20"
     },
+		{ 
+        id: 41, 
+        name: "夏日14天", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/41.png",
+        screenshots: [         
+		"./images/screenshots/41/1.jpg",
+        ],
+    description: `一款别出心裁的独立游戏，融合末日题材，将横版像素探索、模拟经营与多结局剧情巧妙结合，为玩家带来一场紧张刺激且充满深度的游戏体验。游戏以独特的14天倒计时开启，从「第1天清晨」起，右上角剩余天数的显示时刻提醒着玩家时间的紧迫，凌晨0点自动推进下一天，无法回溯，营造出强烈的紧迫感。`,
+		size: "700MB+",
+        version: "",
+        updateDate: "2025-10-20"
+    },
 
 ];
 
