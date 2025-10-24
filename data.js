@@ -754,6 +754,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-20"
     },
+	{ 
+        id: 42, 
+        name: "车祸模拟器", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/42.png",
+        screenshots: [         
+		"./images/screenshots/42/1.jpg",
+        ],
+    description: `车祸模拟器是一款专注于模拟车祸的驾驶游戏，旨在通过真实的物理反馈和细腻的破坏过程，为玩家提供极致的体验。游戏通过3D引擎优化，展现了从碰撞到解体的真实世界物理反应，每种车辆的结构和破坏效果各不相同，从高速撞击到极限环境测试，玩家可以体验不同场景中的车辆毁灭效果。`,
+		size: "200MB+",
+        version: "",
+        updateDate: "2025-10-24"
+    },
 
 ];
 
