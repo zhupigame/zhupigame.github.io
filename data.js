@@ -784,6 +784,22 @@ const allGames = [
         version: "",
         updateDate: "2025-10-26"
     },
+	{ 
+        id: 44, 
+        name: "道德界限", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/44.png",
+        screenshots: [         
+		"./images/screenshots/44/1.jpg",
+        ],
+    description: `准备好迎接一段激动人心的体验吧，你的每一个选择都可能为你铺就成功之路，也可能将你的生活拖入阴谋诡计的漩涡。故事的核心人物是艾玛，一位在一家大公司开始新工作的年轻女性。但她很快意识到，办公室的墙壁不仅隐藏着职业机会，还隐藏着一张错综复杂的阴谋和秘密之网，她必须巧妙地应对。`,
+		size: "3GB+",
+        version: "0.551",
+        updateDate: "2025-10-27"
+    },
+		
 
 ];
 
