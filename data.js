@@ -799,8 +799,22 @@ const allGames = [
         version: "0.551",
         updateDate: "2025-10-27"
     },
-		
-
+	{ 
+        id: 45, 
+        name: "女吊", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/45.png",
+        screenshots: [         
+		"./images/screenshots/45/1.jpg",
+        ],
+    description: `是一款双人合作模式的3D中式民俗恐怖解密游戏，两名玩家在游戏中扮演一对被困荒村的兄妹，前无去处，无路可退，森森雾雨之中，揭晓前尘往事。`,
+		size: "1300MB+",
+        version: "",
+        updateDate: "2025-10-28"
+    },
+	
 ];
 
 
