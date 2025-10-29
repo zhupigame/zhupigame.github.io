@@ -814,7 +814,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-28"
     },
-	
+	{ 
+        id: 46, 
+        name: "痴情哥哥与病弱妹妹的乡间生活", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/46.png",
+        screenshots: [         
+		"./images/screenshots/46/1.jpg",
+        ],
+    description: `妹妹“明日美”，天生肺功能弱，体弱多病，无法适应城市里的生活。兄妹为了能欢度快乐的生活，他们搬家到了空气清新的乡下。生活在与世隔绝的老屋里，兄妹二人陷入了爱河。为了继续这种生活，医生提出必须达成“身心健康”和“增加妹妹的体质”这两个条件。与妹妹爱爱增强体魄，来应对医生的定期检查，同时通过各种各样的事件逐步改善生活水平吧。`,
+		size: "1300MB+",
+        version: "",
+        updateDate: "2025-10-29"
+    },
 ];
 
 
