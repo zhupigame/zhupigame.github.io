@@ -829,6 +829,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-29"
     },
+	{ 
+        id: 47, 
+        name: "谪仙索欢录", 
+        type: ["mobile","pc","gentleman"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/47.png",
+        screenshots: [         
+		"./images/screenshots/47/1.jpg",
+        ],
+    description: `尊者轩辕月在与魔尊的战斗中遭受修为尽失的诅咒。诅咒极难去除，即使学会九转阴阳合欢法，也只是暂时的借双修将诅咒转嫁给对方，无法根除。直到一周前，他得知梦汐湾小镇出现一个上古秘境，里面拥有解除咒诅的宝物万花琉璃花。几番思索，他决定前往梦汐湾小镇。在那里，他将成功利用修仙者们还是成为她们的猎物？。`,
+		size: "400MB+",
+        version: "",
+        updateDate: "2025-10-27"
+    },
 ];
 
 
