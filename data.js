@@ -844,6 +844,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-27"
     },
+	{ 
+        id: 48, 
+        name: "你爹送你上学", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/48.png",
+        screenshots: [         
+		"./images/screenshots/48/1.jpg",
+        ],
+    description: `你将扮演一名爸爸，骑着自行车送儿子上学。但是，这个旅程充满了各种挑战和危险，需要你不断地闯关和挑战。游戏中有多种地形和关卡，需要你在各种障碍物和陷阱之间穿梭，使用自行车的技巧来跳跃、滑行和翻滚，以避免撞到障碍物或掉入陷阱。你需要不断地收集道具和金币，来升级自己的自行车和装备，以应对越来越困难的关卡和挑战。`,
+		size: "400MB+",
+        version: "",
+        updateDate: "2025-10-31"
+    },
 ];
 
 
