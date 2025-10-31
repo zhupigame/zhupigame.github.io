@@ -777,7 +777,7 @@ const allGames = [
         isFeatured: false,
         icon: "./images/icons/43.png",
         screenshots: [         
-		"./images/screenshots/423/1.jpg",
+		"./images/screenshots/43/1.jpg",
         ],
     description: `在魔法资质测试中惨遭滑铁卢后，你被分到了校园里最古怪的一群学生中。在学院的第一晚，你就遭遇了一场“袭击”——来自露西，一个男魅魔，他似乎对新来的你很感兴趣……而当你达到高潮的那一刻，露西体内的魔力暴走，甚至因为能量过剩而发生了变身……就在那一刻，你才发现自己其实拥有一种罕见的天赋：你是“魔力共鸣者”，一种能与他人魔法产生共振并放大的罕见体质。。`,
 		size: "2000MB+",
