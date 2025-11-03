@@ -859,6 +859,21 @@ const allGames = [
         version: "",
         updateDate: "2025-10-31"
     },
+	{ 
+        id: 49, 
+        name: "按摩沙龙春风亭", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/49.png",
+        screenshots: [         
+		"./images/screenshots/49/1.jpg",
+        ],
+    description: `在大城市混迹的你，因为一次偶然机会，回到了阔别已久的家乡继承了叔叔经营的按摩沙龙。在这里有形形色色的客人等待着你，你可以通过不同按摩技巧来满足客人，当然，努力经营赚钱也是很重要的，有些客人会因为你店的装修水准太低或名声太差而不愿意进店按摩。总之，努力的让自己财色兼收吧！！`,
+		size: "300MB+",
+        version: "",
+        updateDate: "2025-11-3"
+    },
 ];
 
 
