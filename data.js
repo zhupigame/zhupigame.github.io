@@ -874,6 +874,21 @@ const allGames = [
         version: "",
         updateDate: "2025-11-3"
     },
+	{ 
+        id: 50, 
+        name: "情妇之塔", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/50.png",
+        screenshots: [         
+		"./images/screenshots/50/1.jpg",
+        ],
+    description: `你被迫参与一项实验，并被送到一个被女魔困扰的奇幻世界。你会迎难而上，击败她们，还是会被碾碎成奴隶？`,
+		size: "400MB+",
+        version: "3.08",
+        updateDate: "2025-11-4"
+    },
 ];
 
 
