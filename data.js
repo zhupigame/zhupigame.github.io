@@ -889,6 +889,21 @@ const allGames = [
         version: "3.08",
         updateDate: "2025-11-4"
     },
+	{ 
+        id: 52, 
+        name: "顽皮的莱安娜", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/52.png",
+        screenshots: [         
+		"./images/screenshots/52/1.jpg",
+        ],
+    description: `顽皮的莱安娜是一款全新的互动角色扮演游戏，在游戏当中玩家需要控制女主进行各种恶作剧游戏，使用自己的行为来获得更多的快乐，逐渐解锁不同的能力体验，享受到游戏的趣味性，为我们的玩耍之旅带来更多的快乐，快来展开不一样的冒险吧。`,
+		size: "1400MB+",
+        version: "1.03",
+        updateDate: "2025-11-6"
+    },
 ];
 
 
