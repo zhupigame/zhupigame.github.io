@@ -904,6 +904,21 @@ const allGames = [
         version: "1.03",
         updateDate: "2025-11-6"
     },
+	{ 
+        id: 53, 
+        name: "耐心perpenie", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/53.png",
+        screenshots: [         
+		"./images/screenshots/53/1.jpg",
+        ],
+    description: `在后苏联时代阴郁的日常生活氛围中，诸如清洁、烹饪和探索自己的房间等日常琐事，都隐藏着更为黑暗的秘密。在疯子找到你之前，努力生存并揭开真相。结束一天漫长的工作后，你回到家。`,
+		size: "500MB+",
+        version: "1.03",
+        updateDate: "2025-11-7"
+    },
 ];
 
 
