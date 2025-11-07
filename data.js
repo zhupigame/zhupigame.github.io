@@ -919,6 +919,21 @@ const allGames = [
         version: "1.03",
         updateDate: "2025-11-7"
     },
+	{ 
+        id: 54, 
+        name: "无归", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/54.png",
+        screenshots: [         
+		"./images/screenshots/54/1.jpg",
+        ],
+    description: `本该是带着放松心情回家的你，却发现周遭熟悉的一切已经悄然发生了变化：空无一人的楼道走廊，嘎吱作响的虚掩房门，还有墙壁上似曾相识的画像·····在这诡异却又真实的环境中，你将透过层层解谜，发现角落里隐匿而又不堪的真相。`,
+		size: "15GB+",
+        version: "1.03",
+        updateDate: "2025-11-7"
+    },
 ];
 
 
