@@ -934,6 +934,21 @@ const allGames = [
         version: "1.03",
         updateDate: "2025-11-7"
     },
+	{ 
+        id: 55, 
+        name: "轮舞曲duo", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/55.png",
+        screenshots: [         
+		"./images/screenshots/55/1.jpg",
+        ],
+    description: `游戏的题材选自校园，玩家们将会体验到校园中的种种浪漫爱情故事，情节比较简单，而且全城flash动画的展现形式更让我们感觉是在看一部动画片，实在是良心至极，并且画风极其的精美，采用木偶风格。`,
+		size: "6GB+",
+        version: "0.09",
+        updateDate: "2025-11-10"
+    },
 ];
 
 
