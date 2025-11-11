@@ -949,6 +949,21 @@ const allGames = [
         version: "0.09",
         updateDate: "2025-11-10"
     },
+	{ 
+        id: 57, 
+        name: "孕育的摇篮之卵", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/57.png",
+        screenshots: [         
+		"./images/screenshots/57/1.jpg",
+        ],
+    description: `一款以奇幻冒险为主题的同人动作游戏。玩家将进入一个名为“摇篮”的神秘世界，这个世界充满了未知与危险，但也隐藏着无数的秘密等待玩家去揭开。在这个世界里，您将遇到各种前所未见的场景与角色，例如会说话的森林动物、古老的城堡幽灵等，让您仿佛置身于一个梦境般的奇妙世界。`,
+		size: "600MB+",
+        version: "0.1",
+        updateDate: "2025-11-11"
+    },
 ];
 
 
