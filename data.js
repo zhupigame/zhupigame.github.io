@@ -964,6 +964,21 @@ const allGames = [
         version: "0.1",
         updateDate: "2025-11-11"
     },
+	{ 
+        id: 56, 
+        name: "死宅天使", 
+        type: ["mobile"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/56.png",
+        screenshots: [         
+		"./images/screenshots/56/1.jpg",
+        ],
+    description: `游戏背景设定在一个充满日常温情的宅邸中，玩家将扮演一名死宅，与三位性格迥异、美丽动人的天使女孩共同生活，通过一系列温馨有趣的互动，逐步增进彼此的感情，解锁更多隐藏剧情和cg。游戏采用第一人称视角，让玩家仿佛身临其境，体验与美少女们共同生活的甜蜜与乐趣。`,
+		size: "2GB+",
+        version: "1.2",
+        updateDate: "2025-11-12"
+    },
 ];
 
 
