@@ -1,0 +1,16 @@
+{
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": ".",
+  "rewrites": [{"source": "/(.*)", "destination": "/index.html"}],
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=604800"
+        }
+      ]
+    }
+  ]
+}
