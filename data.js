@@ -1,4 +1,5 @@
 
+
 const allGames = [
         { 
         id: 1, 
@@ -875,109 +876,48 @@ const allGames = [
         updateDate: "2025-11-3"
     },
 	{ 
-        id: 50, 
-        name: "情妇之塔", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/50.png",
-        screenshots: [         
-		"./images/screenshots/50/1.jpg",
-        ],
-    description: `你被迫参与一项实验，并被送到一个被女魔困扰的奇幻世界。你会迎难而上，击败她们，还是会被碾碎成奴隶？`,
-		size: "400MB+",
-        version: "3.08",
-        updateDate: "2025-11-4"
+        id: 50, name: "情妇之塔",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/50.png",screenshots: ["./images/screenshots/50/1.jpg",],size: "400MB+",version: "3.08",updateDate: "2025-11-4",
+    description: `你被迫参与一项实验，并被送到一个被女魔困扰的奇幻世界。你会迎难而上，击败她们，还是会被碾碎成奴隶？`,	
     },
 	{ 
-        id: 52, 
-        name: "顽皮的莱安娜", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/52.png",
-        screenshots: [         
-		"./images/screenshots/52/1.jpg",
-        ],
-    description: `顽皮的莱安娜是一款全新的互动角色扮演游戏，在游戏当中玩家需要控制女主进行各种恶作剧游戏，使用自己的行为来获得更多的快乐，逐渐解锁不同的能力体验，享受到游戏的趣味性，为我们的玩耍之旅带来更多的快乐，快来展开不一样的冒险吧。`,
-		size: "1400MB+",
-        version: "1.03",
-        updateDate: "2025-11-6"
+        id: 52,name: "顽皮的莱安娜", type: ["mobile"], qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/52.png",screenshots: ["./images/screenshots/52/1.jpg",],size: "1400MB+",version: "1.03",updateDate: "2025-11-6",
+    description: `顽皮的莱安娜是一款全新的互动角色扮演游戏，在游戏当中玩家需要控制女主进行各种恶作剧游戏，使用自己的行为来获得更多的快乐，逐渐解锁不同的能力体验，享受到游戏的趣味性，为我们的玩耍之旅带来更多的快乐，快来展开不一样的冒险吧。`,		
     },
 	{ 
-        id: 53, 
-        name: "耐心perpenie", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/53.png",
-        screenshots: [         
-		"./images/screenshots/53/1.jpg",
-        ],
+        id: 53, name: "耐心perpenie",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false, icon: "./images/icons/53.png", screenshots: ["./images/screenshots/53/1.jpg",],size: "500MB+",version: "1.03",updateDate: "2025-11-7",
     description: `在后苏联时代阴郁的日常生活氛围中，诸如清洁、烹饪和探索自己的房间等日常琐事，都隐藏着更为黑暗的秘密。在疯子找到你之前，努力生存并揭开真相。结束一天漫长的工作后，你回到家。`,
-		size: "500MB+",
-        version: "1.03",
-        updateDate: "2025-11-7"
     },
 	{ 
-        id: 54, 
-        name: "无归", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/54.png",
-        screenshots: [         
-		"./images/screenshots/54/1.jpg",
-        ],
+        id: 54,name: "无归",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/54.png",screenshots: ["./images/screenshots/54/1.jpg",],size: "15GB+",version: "1.03",updateDate: "2025-11-7",
     description: `本该是带着放松心情回家的你，却发现周遭熟悉的一切已经悄然发生了变化：空无一人的楼道走廊，嘎吱作响的虚掩房门，还有墙壁上似曾相识的画像·····在这诡异却又真实的环境中，你将透过层层解谜，发现角落里隐匿而又不堪的真相。`,
-		size: "15GB+",
-        version: "1.03",
-        updateDate: "2025-11-7"
+		
     },
 	{ 
-        id: 55, 
-        name: "轮舞曲duo", 
+        id: 55, name: "轮舞曲duo",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/55.png",screenshots: ["./images/screenshots/55/1.jpg",],size: "6GB+",version: "0.09",updateDate: "2025-11-10",
+    description: `游戏的题材选自校园，玩家们将会体验到校园中的种种浪漫爱情故事，情节比较简单，而且全城flash动画的展现形式更让我们感觉是在看一部动画片，实在是良心至极，并且画风极其的精美，采用木偶风格。`,
+    },
+	{ 
+        id: 57,name: "孕育的摇篮之卵",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/57.png",screenshots: ["./images/screenshots/57/1.jpg",],size: "600MB+",version: "0.1",updateDate: "2025-11-11",
+    description: `一款以奇幻冒险为主题的同人动作游戏。玩家将进入一个名为“摇篮”的神秘世界，这个世界充满了未知与危险，但也隐藏着无数的秘密等待玩家去揭开。在这个世界里，您将遇到各种前所未见的场景与角色，例如会说话的森林动物、古老的城堡幽灵等，让您仿佛置身于一个梦境般的奇妙世界。`,
+    },
+	{ 
+        id: 56,name: "死宅天使",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/56.png",screenshots: ["./images/screenshots/56/1.jpg",],size: "2GB+",version: "1.2",updateDate: "2025-11-12",
+    description: `游戏背景设定在一个充满日常温情的宅邸中，玩家将扮演一名死宅，与三位性格迥异、美丽动人的天使女孩共同生活，通过一系列温馨有趣的互动，逐步增进彼此的感情，解锁更多隐藏剧情和cg。游戏采用第一人称视角，让玩家仿佛身临其境，体验与美少女们共同生活的甜蜜与乐趣。`,
+    },
+	{ 
+        id: 59, 
+        name: "模拟人生4", 
         type: ["pc"], 
 		qrCode: "./images/qrcodes/2.jpg",
         isFeatured: false,
-        icon: "./images/icons/55.png",
+        icon: "./images/icons/59.png",
         screenshots: [         
-		"./images/screenshots/55/1.jpg",
+		"./images/screenshots/59/1.jpg",
         ],
-    description: `游戏的题材选自校园，玩家们将会体验到校园中的种种浪漫爱情故事，情节比较简单，而且全城flash动画的展现形式更让我们感觉是在看一部动画片，实在是良心至极，并且画风极其的精美，采用木偶风格。`,
-		size: "6GB+",
-        version: "0.09",
-        updateDate: "2025-11-10"
-    },
-	{ 
-        id: 57, 
-        name: "孕育的摇篮之卵", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/57.png",
-        screenshots: [         
-		"./images/screenshots/57/1.jpg",
-        ],
-    description: `一款以奇幻冒险为主题的同人动作游戏。玩家将进入一个名为“摇篮”的神秘世界，这个世界充满了未知与危险，但也隐藏着无数的秘密等待玩家去揭开。在这个世界里，您将遇到各种前所未见的场景与角色，例如会说话的森林动物、古老的城堡幽灵等，让您仿佛置身于一个梦境般的奇妙世界。`,
-		size: "600MB+",
+    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
+		size: "20GB+",
         version: "0.1",
-        updateDate: "2025-11-11"
-    },
-	{ 
-        id: 56, 
-        name: "死宅天使", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/56.png",
-        screenshots: [         
-		"./images/screenshots/56/1.jpg",
-        ],
-    description: `游戏背景设定在一个充满日常温情的宅邸中，玩家将扮演一名死宅，与三位性格迥异、美丽动人的天使女孩共同生活，通过一系列温馨有趣的互动，逐步增进彼此的感情，解锁更多隐藏剧情和cg。游戏采用第一人称视角，让玩家仿佛身临其境，体验与美少女们共同生活的甜蜜与乐趣。`,
-		size: "2GB+",
-        version: "1.2",
-        updateDate: "2025-11-12"
+        updateDate: "2025-11-14"
     },
 ];
 
