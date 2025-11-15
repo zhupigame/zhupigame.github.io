@@ -919,6 +919,21 @@ const allGames = [
         version: "0.1",
         updateDate: "2025-11-14"
     },
+	{ 
+        id: 60, 
+        name: "少女卷轴5", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/60.png",
+        screenshots: [         
+		"./images/screenshots/60/1.jpg",
+        ],
+    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
+		size: "80GB+",
+        version: "",
+        updateDate: "2025-11-16"
+    },
 ];
 
 
