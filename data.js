@@ -934,6 +934,21 @@ const allGames = [
         version: "",
         updateDate: "2025-11-16"
     },
+	{ 
+        id: 61, 
+        name: "失去四肢的妹妹", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/61.png",
+        screenshots: [         
+		"./images/screenshots/61/1.jpg",
+        ],
+    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
+		size: "600MB+",
+        version: "0.1",
+        updateDate: "2025-11-17"
+    },
 ];
 
 
