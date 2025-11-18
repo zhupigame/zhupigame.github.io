@@ -949,6 +949,21 @@ const allGames = [
         version: "0.1",
         updateDate: "2025-11-17"
     },
+	{ 
+        id: 62, 
+        name: "死馆2", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/62.png",
+        screenshots: [         
+		"./images/screenshots/62/1.jpg",
+        ],
+    description: `本作讲述的是一个有各种魔物的世界中，人类与魔族战争不断，主人公女骑士因为一些原因取得了上位种族少年的青睐，为了保护人类的公主，以为上位种族烹饪美食为条件与上位种族生活在了一起，公主与女骑士能否在上位种族离开世界前活下去？她们的命运将会如何？还有什么残酷的事件将会等待她们?`,
+		size: "3GB+",
+        version: "0.1",
+        updateDate: "2025-11-179"
+    },
 ];
 
 
