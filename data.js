@@ -979,6 +979,21 @@ const allGames = [
         version: "1.1",
         updateDate: "2025-11-23"
     },
+		{ 
+        id: 64, 
+        name: "辣妹基地", 
+        type: ["pc"], 
+		qrCode: "./images/qrcodes/2.jpg",
+        isFeatured: false,
+        icon: "./images/icons/64.png",
+        screenshots: [         
+		"./images/screenshots/64/1.jpg",
+        ],
+    description: `一款非常适合喜欢校园氛围、青春友情和日常互动的朋友们尝试的游戏。在这座城市的一角，有一所充满青春活力的学校。而在学校附近的一条小巷子里，隐藏着一个被大家称为“辣妹基地”的地方。这原本是一家废弃的咖啡店，经过一群辣妹们的改造，变成了她们放学后的秘密聚集地。`,
+		size: "300MB+",
+        version: "1.1",
+        updateDate: "2025-11-28"
+    },
 ];
 
 
