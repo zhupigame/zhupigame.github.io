@@ -290,6 +290,14 @@
     const categoryTitleEl = document.getElementById('category-title');
     const searchInputEl = document.getElementById('search-input');
 
+    // 类型映射：分类名称 → 数字（适配data.js中type的数字数组）
+    const typeMap = {
+        'mobile': 1,
+        'pc': 2,
+        'gentleman': 3,
+        'all': 'all' // 特殊标识，不参与数字匹配
+    };
+
     // 初始化（不变）
     init();
 
@@ -311,14 +319,15 @@
         categoryTitleEl.textContent = titleMap[currentCategory] || '全部游戏';
     }
 
-    // 【修改】渲染游戏列表（核心：添加图标容器包裹）
+    // 【核心修改】渲染游戏列表（适配数字类型筛选+自动拼接图标路径）
     function renderGameList() {
-        // 【关键修改】筛选逻辑：支持多类型数组包含匹配
+        // 【关键修改】筛选逻辑：适配数字类型数组包含匹配
         const filteredGames = allGames.filter(game => {
             // 处理游戏类型：确保转为数组（兼容单类型和多类型）
             const gameTypes = Array.isArray(game.type) ? game.type : [game.type];
-            // 分类匹配：全部游戏/或游戏类型包含当前分类
-            const isMatchCategory = currentCategory === 'all' || gameTypes.includes(currentCategory);
+            // 分类匹配：全部游戏/或游戏类型包含当前分类对应的数字
+            const targetType = typeMap[currentCategory];
+            const isMatchCategory = currentCategory === 'all' || gameTypes.includes(targetType);
             // 搜索匹配（不变）
             const isMatchSearch = searchTerm === '' || game.name.toLowerCase().includes(searchTerm);
             return isMatchCategory && isMatchSearch;
@@ -340,14 +349,17 @@
         const startIdx = (currentPage - 1) * gamesPerPage;
         const currentGames = filteredGames.slice(startIdx, startIdx + gamesPerPage);
 
-        // 生成游戏卡片（关键修改：添加.game-icon-wrapper包裹图标）
+        // 生成游戏卡片（关键修改：自动拼接图标路径，移除game.icon依赖）
         gameListEl.innerHTML = '';
         currentGames.forEach(game => {
+            // 自动拼接图标路径：使用data.js中的全局常量BASE_ICON_PATH + 游戏ID + .jpg
+            const iconPath = `${BASE_ICON_PATH}${game.id}.jpg`;
+            
             const card = document.createElement('div');
             card.className = 'game-card';
             card.innerHTML = `
-                <div class="game-icon-wrapper"> <!-- 新增：和样式对应的图标容器 -->
-                    <img src="${game.icon}" alt="${game.name}图标" class="game-icon" 
+                <div class="game-icon-wrapper"> <!-- 保持样式容器不变 -->
+                    <img src="${iconPath}" alt="${game.name}图标" class="game-icon" 
                          onerror="this.src='https://picsum.photos/seed/error/200/200'">
                 </div>
                 <div class="game-name">${game.name}</div>

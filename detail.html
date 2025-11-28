@@ -462,7 +462,7 @@
             const modalImage = document.getElementById('modal-qr-image');
             
             modalTitle.textContent = `用迅雷APP扫码下载 ${currentGame.name}`;
-            modalImage.src = currentGame.qrCode;
+            modalImage.src = DEFAULT_QR_CODE; // 使用统一二维码
             modalImage.alt = `${currentGame.name}下载二维码`;
             modalImage.onerror = function() {
                 this.src = `https://picsum.photos/seed/qr${currentGame.id}/300/300`;
@@ -516,27 +516,39 @@
 
         // 渲染游戏详情信息
         function renderGameInfo(game) {
-            // 构建截图区域HTML：无截图时仅显示文字，有截图时正常渲染（且移除默认图）
+            // 1. 自动拼接游戏主图路径（BASE_ICON_PATH 来自data.js全局变量）
+            const mainImagePath = `${BASE_ICON_PATH}${game.id}.jpg`;
+            // 3. 自动拼接截图路径（默认每个游戏2张截图，1.jpg、2.jpg）
+            const screenshotCount = 2; // 可根据实际截图数量调整
             let screenshotsHtml = '';
-            if (game.screenshots && game.screenshots.length > 0) {
-                // 有截图：正常渲染，删除 onerror 中的默认图链接
+            let hasScreenshots = false;
+            
+            // 生成截图HTML（检查是否有有效截图路径）
+            const screenshotItems = [];
+            for (let i = 1; i <= screenshotCount; i++) {
+                const shotPath = `${BASE_SCREENSHOT_PATH}${game.id}/${i}.jpg`;
+                screenshotItems.push(`
+                    <div class="screenshot-item">
+                        <img src="${shotPath}" alt="${game.name}游戏截图 ${i}" class="screenshot-img"
+                             onerror="this.classList.add('error'); this.alt=''; this.textContent='';">
+                    </div>
+                `);
+                hasScreenshots = true;
+            }
+            
+            // 拼接截图区域HTML
+            if (hasScreenshots) {
                 screenshotsHtml = `
                     <div class="screenshots-section">
                         <h3 class="section-title">
                             <i class="fa fa-picture-o"></i>游戏截图
                         </h3>
                         <div class="screenshots-grid">
-                            ${game.screenshots.map((shot, index) => `
-                                <div class="screenshot-item">
-                                    <img src="${shot}" alt="${game.name}游戏截图 ${index+1}" class="screenshot-img"
-                                         onerror="this.classList.add('error'); this.alt='截图加载失败'; this.textContent='截图加载失败';">
-                                </div>
-                            `).join('')}
+                            ${screenshotItems.join('')}
                         </div>
                     </div>
                 `;
             } else {
-                // 无截图：仅显示“暂无游戏截图”文字，不添加任何图片
                 screenshotsHtml = `
                     <div class="screenshots-section">
                         <h3 class="section-title">
@@ -551,7 +563,7 @@
                 <div class="detail-header">
                     <!-- 游戏主图 -->
                     <div class="game-main-image">
-                        <img src="${game.icon}" alt="${game.name}游戏主图" class="main-image"
+                        <img src="${mainImagePath}" alt="${game.name}游戏主图" class="main-image"
                              onerror="this.classList.add('error'); this.src='https://picsum.photos/seed/main${game.id}/200/200'; this.alt='图片加载失败';">
                     </div>
                     
@@ -585,7 +597,7 @@
                             
                             <!-- 二维码 -->
                             <div class="qr-code-container" id="main-qr-code">
-                                <img src="${game.qrCode}" alt="${game.name}下载二维码" class="qr-code"
+                                <img src="${DEFAULT_QR_CODE}" alt="${game.name}下载二维码" class="qr-code"
                                      onerror="this.classList.add('error'); this.src='https://picsum.photos/seed/qr${game.id}/200/200'; this.alt='二维码加载失败';">
                             </div>
                         </div>
@@ -612,4 +624,3 @@
     </script>
 </body>
 </html>
-    

@@ -1,18 +1,12 @@
 
-
+// 基础路径常量（1处维护，全量生效）
+const BASE_ICON_PATH = "./images/icons/";
+const BASE_SCREENSHOT_PATH = "./images/screenshots/";
+const DEFAULT_QR_CODE = "./images/qrcodes/2.jpg";
 const allGames = [
-        { 
-        id: 1, 
-        name: "塞雷卡2", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/1.png",  
-        screenshots: [
-            "./images/screenshots/1/1.jpg",
-            "./images/screenshots/1/2.jpg"
-        ],
-    description: `《塞雷卡 2：真菜香的禁忌》作为一款备受瞩目的剧情向游戏，通过精巧的叙事手法，逐步引领玩家深入剧情。游戏承袭了前作的世界观，并深入探索了“真菜香”所蕴含的禁忌之谜。玩家需在探索过程中细心挖掘隐藏的线索，逐步揭开每个角色深藏的秘密!
+{ 
+id: 1,  name: "塞雷卡2",  type: [1,2,3], isFeatured: true,size: "2.1GB",version: "1.1.1",updateDate: "2025-09-28",
+description: `《塞雷卡 2：真菜香的禁忌》作为一款备受瞩目的剧情向游戏，通过精巧的叙事手法，逐步引领玩家深入剧情。游戏承袭了前作的世界观，并深入探索了“真菜香”所蕴含的禁忌之谜。玩家需在探索过程中细心挖掘隐藏的线索，逐步揭开每个角色深藏的秘密!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、沉浸式潜行体验</span>
         <br>
@@ -29,21 +23,10 @@ const allGames = [
         <span style="color:#3B82F6;font-weight:bold">4、玩家体验</span>
         <br>
         值得一提的是，其针对低配置设备的优化使得中端机器也能轻松运行，从而让更多玩家能够享受到潜行的乐趣。在《塞雷卡 2》的开放世界中，道德与欲望的冲突无处不在，暴露与隐蔽的生存法则被演绎得淋漓尽致。这款游戏以极致的潜行体验，诠释了真正的冒险并非简单的硬碰硬对决，而是智慧与胆量的绝妙配合。`,
-		size: "2.1GB",
-        version: "1.1.1",
-        updateDate: "2025-09-28"
-    },
-	    { 
-        id: 2, 
-        name: "罗克珊", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true, 
-        icon: "./images/icons/2.png",
-        screenshots: [
-            "./images/screenshots/2/1.jpg",
-            "./images/screenshots/2/2.jpg",
-        ],
+
+},
+{ 
+    id: 2, name: "罗克珊", type: [1,2,3], isFeatured: true, size: "2.1GB",version: "0.6.2",updateDate: "2025-09-28",
     description: `游戏主打自由探索和角色扮演，玩家要控制性格内向但有特殊爱好的女孩罗克珊，在虚拟城市里进行独特冒险。!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、核心内容</span>
@@ -67,21 +50,9 @@ const allGames = [
 		3.细节优化：新增绳索去除功能（身体标记）、饮料补充能量、隐藏状态特殊互动等，让游戏更真实。
 		<br>
 		4.动态场景：支持360度旋转视角，能全方位看角色动作和环境细节，特别是淋浴区等特殊场景。`,
-		size: "2.1GB",
-        version: "0.6.2",
-        updateDate: "2025-09-28"
     },
 	{ 
-        id: 3, 
-        name: "时间静止-重返校园", 
-        type: ["mobile","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,  
-        icon: "./images/icons/3.png",     
-        screenshots: [
-            "./images/screenshots/3/1.jpg",
-            "./images/screenshots/3/2.jpg",
-        ],
+    id: 3, name: "时间静止-重返校园",type: [1,3],isFeatured: true,  size: "2030.89M", version: "1.0", updateDate: "2025-09-30",
     description: `重返校园中文手机版是一款校园生活模拟类型的游戏，玩家可以进入到一个由虚幻5引擎打造的真实校园场景之中，并在这里体验学生的生活，玩家可以得到丰富的游玩体验并可以探索更多的游戏场景，玩家可以得到不错的游玩体验。感兴趣的玩家就来这里进行下载和游玩吧!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、抽象与正剧并存</span>
@@ -99,45 +70,19 @@ const allGames = [
         <span style="color:#3B82F6;font-weight:bold">4、隐藏剧情</span>
         <br>
         还有各种支线任务和隐藏任务，玩家需要通过与不同的角色互动、探索校园的各个角落来触发和完成任务。`,
-    size: "2030.89M",
-    version: "1.0",
-    updateDate: "2025-09-30"
     },
     { 
-        id: 4, 
-        name: "白色情人节-恐怖学校", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,  
-        icon: "./images/icons/4.png",
-        screenshots: [
-            "./images/screenshots/4/1.jpg",
-            "./images/screenshots/4/2.jpg",
-        ],
-        description: `恐怖学校白色情人节是一款非常恐怖的逃生类游戏。游戏采用第一视角亲身体验游戏里面的恐怖故事，配合黑暗的游戏画风加上恐怖的背景音乐，瞬间营造出一种惊悚的氛围，让感到一股寒气从尾椎骨往上冒，让人头皮发麻。`,
-        size: "850MB",
-        version: "2.1.0",
-        updateDate: "2025-09-28"
+    id: 4,name: "白色情人节-恐怖学校",  type: [1], isFeatured: true,  size: "850MB",version: "2.1.0", updateDate: "2025-09-28",
+    description: `恐怖学校白色情人节是一款非常恐怖的逃生类游戏。游戏采用第一视角亲身体验游戏里面的恐怖故事，配合黑暗的游戏画风加上恐怖的背景音乐，瞬间营造出一种惊悚的氛围，让感到一股寒气从尾椎骨往上冒，让人头皮发麻。`,
     },
-   
     { 
-        id: 5, 
-        name: "爬行实验室", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/5.png",
-        screenshots: [
-            "./images/screenshots/5/1.jpg",
-            "./images/screenshots/5/2.jpg"
-        ],
+    id: 5, name: "爬行实验室", type: [1,2,3], isFeatured: true,size: "2.1GB",version: "0.6.2",updateDate: "2025-09-28",
     description: `"爬行实验室"，是新纶工业在深山中建造的秘密设施。
 在这里，正在研究使用新开发的人工生命体"生物娃娃"的新产品。
 然而有一天，网络爬行人工智能窃取了第二代'生物娃娃'的身体，自称为“爬行女王”，并控制了实验室的所有设施。
 主角奉命前往实验室取回研究资料，却因一场意外事故，被独自留在实验室……他能否逃出爬行女王控制的实验室？
 <br>
 获取弹药并升级你的枪来击败爬行女王的爪牙。逃离实验室。!
-
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、核心内容</span>
         <br>
@@ -159,23 +104,10 @@ const allGames = [
 		<br>
 		3.细节优化：新增绳索去除功能（身体标记）、饮料补充能量、隐藏状态特殊互动等，让游戏更真实。
 		<br>
-		4.动态场景：支持360度旋转视角，能全方位看角色动作和环境细节，特别是淋浴区等特殊场景。`,
-		size: "2.1GB",
-        version: "0.6.2",
-        updateDate: "2025-09-28"
-    },
-    
+		4.动态场景：支持360度旋转视角，能全方位看角色动作和环境细节，特别是淋浴区等特殊场景。`,		
+    },  
     { 
-        id: 6, 
-        name: "棘罪修女", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/6.png",
-        screenshots: [
-            "./images/screenshots/6/1.jpg",
-            "./images/screenshots/6/2.jpg"
-        ],
+    id: 6,name: "棘罪修女",  type: [1,2,3], isFeatured: true,size: "3.7GB",version: "0.7.5",updateDate: "2025-09-29",
     description: `《棘罪修女》的故事背景设定在一个被未知力量摧毁的理想乡马格海姆。伊妮莎，一位逃离教堂的修女，在废墟中寻找遭遇灾难的原因，同时踏上了净化魔物横行的棘罪之地的旅程!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、角色设定</span>
@@ -191,21 +123,9 @@ const allGames = [
 		血藤蔓：需用火系或毒系伤害打破。
 		<br>
 		肉通道：内含双胞胎BUFF，可获取特殊能力。`,
-		size: "3.7GB",
-        version: "0.7.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 7, 
-        name: "魔女的侵袭", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/7.png",
-        screenshots: [
-            "./images/screenshots/7/1.jpg",
-            "./images/screenshots/7/2.jpg"
-        ],
+    id: 7,  name: "魔女的侵袭", type: [1,2,3],isFeatured: true,size: "1.7GB",version: "0.8.5", updateDate: "2025-09-29",
     description: `《魔女的侵袭》是一款充满魔幻与冒险元素的3D动作闯关游戏。玩家将在游戏中扮演一名勇敢的英雄，与邪恶的魔女展开激烈对抗。游戏拥有逼真精美的画面和流畅的动画效果，带给玩家身临其境的体验。通过探索广阔又危险的世界，解开隐藏的谜题和危机，携带各种强大武器和技能，挑战各类恶魔和怪物，逐步提升自身能力和技巧。!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、游戏特色</span>
@@ -225,775 +145,237 @@ const allGames = [
 		3、全3D动态场景：游戏将玩家带入全3D动态场景中，细致精美的画面设计让游戏更加生动逼真。
 		<br>
 		4、丰富的角色和道具：游戏中设有多种角色和道具可供玩家选择和使用，增加游戏可玩性。`,
-		size: "1.7GB",
-        version: "0.8.5",
-        updateDate: "2025-09-29"
     },
-
-		{ 
-        id: 8, 
-        name: "爱丽丝的摇篮", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/8.png",
-        screenshots: [
-            "./images/screenshots/8/1.jpg",
-            "./images/screenshots/8/2.jpg"
-        ],
+	{ 
+    id: 8,  name: "爱丽丝的摇篮", type: [1,2,3],isFeatured: true,size: "1.1GB",version: "0.7.9",updateDate: "2025-09-29",
     description: `爱丽丝的摇篮支持中文，融合了魔法战斗、谜题解答与剧情探索。游戏采用精美的二次元画风、剧情丰富，玩家将扮演诺艾尔，在充满危险与奇迹的梦境中展开冒险，需利用魔法与武器击败怪物，解开古老谜题，逐步揭开故事的真相。!
         <br><br>
         <span style="color:#3B82F6;font-weight:bold">1、游戏特色</span>
         <br>
         游戏采用了非常细腻和迷人的像素画风，角色动作流畅，场景细节丰富，配合出色的光影效果和音乐，成功营造了一个既美丽又神秘的奇幻世界氛围。`,
-		size: "1.1GB",
-        version: "0.7.9",
-        updateDate: "2025-09-29"
     },
-		{ 
-        id: 9, 
-        name: "古式按摩店", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/9.png",
-        screenshots: [
-            "./images/screenshots/9/1.jpg",
-            "./images/screenshots/9/2.jpg"
-        ],
+	{ 
+    id: 9, name: "古式按摩店", type: [1,2,3], isFeatured: true,size: "587MB",version: "1.7.5",updateDate: "2025-09-29",
     description: `非常火爆的游戏，游戏有着认真的经营养成玩法，玩家从一开始只有浩太亲自上阵服务客人的状态下想办法发展。尽可能在每天营业的时间招来更多客源，并且透过招募员工来壮大店内的生意。地图场景众多，背景音效表现得非常好，令人身临其境，在独创的世界中展开新的冒险故事。!`,
-		size: "587MB",
-        version: "1.7.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 10, 
-        name: "存在感薄弱的妹妹", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: true,
-        icon: "./images/icons/10.png",
-        screenshots: [
-            "./images/screenshots/10/1.jpg",
-            "./images/screenshots/10/2.jpg"
-        ],
+    id: 10, name: "存在感薄弱的妹妹",type: [1,2,3], isFeatured: true,size: "642MB",version: "1.5.5",updateDate: "2025-09-29",
     description: `玩家在与妹妹一起生活的同时，在地下城里扮演独自冒险者。为了治愈妹妹特殊的体质，玩家不断地寻找用于制作万能药剂“红髓液”所需的材料。如果在规定时间内无法完成，妹妹将会…回到家冒险后，玩家会与妹妹共度宝贵时光。用收集到的食材为妹妹做饭，分享冒险的故事，一起玩游戏或一起睡觉。!`,
-		size: "642MB",
-        version: "1.5.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 11, 
-        name: "管理员的窥视", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/11.png",
-        screenshots: [
-            "./images/screenshots/11/1.jpg",
-            "./images/screenshots/11/2.jpg"
-        ],
+    id: 11,name: "管理员的窥视", type: [1,2,3], isFeatured: false,size: "837MB", version: "1.5.5",updateDate: "2025-09-29",
     description: `一款以偷窥为主题的角色扮演类解谜游戏，主角将扮演大学女子宿舍的管理员平日修缮、清洁宿舍，同时你可以利用职务之便，装设针孔摄影机进行偷拍、偷听搜集隐私，进而推进攻略女主角。立体多样的人物设计，不管是从人物的内心刻画还是场景建模，都是一件完美的艺术品，让我们陶醉其中。地图场景众多，背景音效表现得非常好，令人身临其境，在独创的世界中展开新的冒险故事。!`,
-		size: "837MB",
-        version: "1.5.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 12, 
-        name: "护身术道场", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/12.png",
-        screenshots: [
-            "./images/screenshots/12/1.jpg",
-            "./images/screenshots/12/2.jpg"
-        ],
+    id: 12, name: "护身术道场", type: [1,2,3], isFeatured: false,size: "967MB",version: "1.5.5",updateDate: "2025-09-29",
     description: `护身术道场以其出色的画质和独特画风脱颖而出。作为“黄毛视角”的ntr游戏，其像素画质相较于前辈们有了显著提升，同时，丰富的游戏内容和独特的攻略方式也深受玩家喜爱。通过攻略获得道具解锁更多内容，让玩家在享受游戏的同时，也能感受到策略与智慧的碰撞。!`,
-		size: "967MB",
-        version: "1.5.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 13, 
-        name: "姐姐的逃离", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/13.png",
-        screenshots: [
-            "./images/screenshots/13/1.jpg",
-            "./images/screenshots/13/2.jpg"
-        ],
+    id: 13,  name: "姐姐的逃离", type: [1,2,3], isFeatured: false,size: "967MB", version: "2.5.5",updateDate: "2025-09-29",
     description: ``,
-		size: "967MB",
-        version: "2.5.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 14, 
-        name: "魔物少女征服记", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/14.png",
-        screenshots: [
-            "./images/screenshots/14/1.jpg",
-            "./images/screenshots/14/2.jpg"
-        ],
+    id: 14,  name: "魔物少女征服记", type: [1,2,3], isFeatured: false,size: "597MB",version: "1.1.5",updateDate: "2025-09-29",
     description: `游戏内容丰富，包含多种超高质量的社保动态CG，由11名插画师共同绘制，5名CV小姐姐提供超过2000句全程语音。文本质量上乘，绝对值得体验。`,
-		size: "597MB",
-        version: "1.1.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 15, 
-        name: "路人娘电车", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/15.png",
-        screenshots: [
-            "./images/screenshots/15/1.jpg",
-            "./images/screenshots/15/2.jpg"
-        ],
+    id: 15, name: "路人娘电车",type: [1,2,3], isFeatured: false,size: "597MB",version: "1.1.5",updateDate: "2025-09-29",
     description: `扮演电车检票员进行三要素核验：车票线路匹配度→身份证人证比对→随身物品安全检查。‌累计正确检查可解锁爱心值，触发乘客深度互动模式（含服装/外貌自定义功能）。违规判定标准含：跨线乘车/危险品携带/票证信息不符等情形。‌`,
-		size: "597MB",
-        version: "1.1.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 16, 
-        name: "梦想的约束", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/16.png",
-        screenshots: [
-            "./images/screenshots/16/1.jpg",
-            "./images/screenshots/16/2.jpg"
-        ],
+    id: 16, name: "梦想的约束",type: [1,2,3], isFeatured: false,size: "597MB",version: "1.1.5",updateDate: "2025-09-29",
     description: `游戏中，玩家将扮演一名经纪人，肩负起培养新人偶像“艾莉”的重任。通过多样化的训练和互动，玩家帮助艾莉从一名普通少女蜕变为光芒四射的顶级偶像。游戏围绕艾莉与其男友“哈利”的情感故事展开，剧情充满戏剧性与冲突感，令人无法自拔‌`,
-		size: "597MB",
-        version: "1.1.5",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 17, 
-        name: "蘑菇岛打工日记", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/17.png",
-        screenshots: [
-            "./images/screenshots/17/1.jpg",
-            "./images/screenshots/17/2.jpg"
-        ],
+    id: 17,  name: "蘑菇岛打工日记", type: [1,2,3], isFeatured: false,size: "597MB",version: "1.1.2",updateDate: "2025-09-29",
     description: `拓海是个啃老族，毕业后一直找不到工作，整天游手好闲。某天经朋友介绍，来到一座小岛上打工。据说那里的报酬相当丰厚。就这样，他的打工生活开始了。‌`,
-		size: "597MB",
-        version: "1.1.2",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 18, 
-        name: "催眠", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/18.png",
-        screenshots: [
-        ],
+    id: 18, name: "催眠",type: [1],isFeatured: false,size: "597MB", version: "", updateDate: "2025-09-29",
     description: `‌一款专为提升用户专注力和放松心情而设计的应用程序。它通过独特的催眠技术和声音疗法，帮助用户在短时间内达到深度放松状态，从而缓解压力、改善睡眠质量。无论是工作繁忙的白领，还是学习压力大的学生，HypnoApp2都能提供个性化的放松体验。`,
-		size: "597MB",
-        version: "",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 19, 
-        name: "导演人生", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/19.png",
-        screenshots: [
-        ],
+    id: 19, name: "导演人生", type: [1], isFeatured: false,size: "",version: "", updateDate: "2025-09-29",
     description: `‌这款游戏是一款模拟器，你可以在其中自由拍摄、剪辑并销售影片制作。主角因偿还债务的需求，与女主角姬宫和泉携手，共同探索多种创意场景！随着游戏的进行，解锁新的拍摄地点，并利用各种道具来创造杰作！`,
-		size: "",
-        version: "",
-        updateDate: "2025-09-29"
     },
 	{ 
-        id: 20, 
-        name: "青色大脑", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/20.png",
-        screenshots: [
-		"./images/screenshots/20/1.jpg",
-        ],
+    id: 20,name: "青色大脑", type: [1,2,3],isFeatured: false,size: "700MB+",version: "0.4.0",updateDate: "2025-10-10",
     description: `‌在神秘的神经网络中自由探索，发现隐藏的记忆碎片，每个区域都有独特的解谜挑战。精心设计的音效与光影效果，营造出令人窒息的恐怖氛围。每一个细节都经过精心雕琢，让您完全沉浸在紧张刺激的游戏体验中。`,
-		size: "700MB+",
-        version: "0.4.0",
-        updateDate: "2025-10-10"
     },
 	{ 
-        id: 21, 
-        name: "圣骑士莉卡物语", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/21.png",
-        screenshots: [
-		"./images/screenshots/21/1.jpg",
-        ],
+    id: 21,name: "圣骑士莉卡物语",type: [1,2,3],isFeatured: false,size: "200MB+",version: "v1.0.148",updateDate: "2025-10-10",
     description: `‌一款制作非常精良的二次元美少女横版战斗闯关游戏，在这款游戏中玩家可以操纵自己的角色，在广阔丰富的地图场景等待玩家来探索，体验更加丰富的游戏内容，而且在这款游戏中还有充满奇幻色彩的游戏剧情等待玩家来体验，战斗动作也十分流畅，技能特效也非常出色，极大的提升了玩家的战斗体验，对此感兴趣玩家一定不要错过。`,
-		size: "200MB+",
-        version: "v1.0.148",
-        updateDate: "2025-10-10"
     },
 	{ 
-        id: 22, 
-        name: "欲望寻魂", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/22.png",
-        screenshots: [
-		"./images/screenshots/22/1.jpg",
-        ],
+    id: 22, name: "欲望寻魂",type: [1,2,3], isFeatured: false,size: "200MB+", version: "",updateDate: "2025-10-10",
     description: `‌游戏中，你将化身为泰德，一位身怀绝技的鬼猎人。你的任务是追踪并降伏各式各样的鬼魂，深入探究他们的故事。 除了独自面对挑战，你还可以寻求助手露娜的指导，游戏内置的CV让鬼魂的声音更加生动有趣，而猎奇的地理位置也将带你领略前所未有的冒险体验。`,
-		size: "200MB+",
-        version: "",
-        updateDate: "2025-10-10"
     },
 	{ 
-        id: 23, 
-        name: "像素男友", 
-        type: ["mobile","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/23.png",
-        screenshots: [
-		"./images/screenshots/23/1.jpg",
-        ],
+    id: 23, name: "像素男友",type: [1,3], isFeatured: false,size: "100MB+",version: "1.04",updateDate: "2025-10-11",
     description: `‌一款乙女向恋爱养成类文字游戏。游戏设定中玩家因诅咒只能看到低分辨率角色立绘，需通过提升好感度逐步解锁清晰图像。包含9位可攻略角色，需在3个月内完成攻略。`,
-		size: "100MB+",
-        version: "1.04",
-        updateDate: "2025-10-11"
     },
 	{ 
-        id: 24, 
-        name: "家出少女", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/24.png",
-        screenshots: [
-		"./images/screenshots/24/1.jpg",
-        ],
+    id: 24,name: "家出少女",type: [1],isFeatured: false,size: "200MB+",version: "1.04", updateDate: "2025-10-11",
     description: `‌一款非常适合广大玩家们游玩的文字恋爱游戏，讲述一个离家出走的少女和男主相遇的故事，故事的走向全部由玩家自己选择，带来丰富且自由的剧情游戏体验，到底你能否和故事中的女孩发展出更深一层的关系，全看你自己的选择了，感兴趣的玩家快来试试吧。`,
-		size: "200MB+",
-        version: "1.04",
-        updateDate: "2025-10-11"
     },
 	{ 
-        id: 25, 
-        name: "极品采花郎", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/25.png",
-        screenshots: [
-		"./images/screenshots/25/1.jpg",
-        ],
+    id: 25,name: "极品采花郎",type: [1], isFeatured: false,size: "5GB+",version: "2.0",updateDate: "2025-10-11",
     description: `极品采花郎是一款国风3D探索冒险的游戏，游戏中采用了开放的世界，还能和非常多的游戏角色互动，可以领取各种不同的任务来完成，典型的穿越剧情，为了重返现实生活，你必须达成一些特定的条件。多位可攻略的女性角色！`,
-		size: "5GB+",
-        version: "2.0",
-        updateDate: "2025-10-11"
     },
 	{ 
-        id: 26, 
-        name: "时停之王", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/26.png",
-        screenshots: [
-		"./images/screenshots/26/1.jpg",
-        ],
+    id: 26,name: "时停之王",type: [1,2,3],isFeatured: false,size: "2GB+",version: "",updateDate: "2025-10-13",
     description: `大致讲一位美少女放学回家必经之路上，疑似遇到一位靓仔尾随，美少女不敢确定靓仔是好人坏人，只能偶尔回头望一下，那么美少女能成功安全回家么？
 				<br>
 				跟踪美少女在没人的地方互动。互动时注意路人和警察。剩下更多玩法自行探索吧。`,
-		size: "2GB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 27, 
-        name: "盛世天下", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/27.png",
-        screenshots: [
-		"./images/screenshots/27/1.jpg",
-        ],
+    id: 27, name: "盛世天下", type: [1],isFeatured: false,size: "300MB+",version: "1.03",updateDate: "2025-10-13",
     description: `从一个默默无闻的新人成为权力巅峰的盛朝女皇，在命悬一线的杀局中破局重生、酣畅复仇！在这里，宫廷生存挑战，你能活到第几集？能互动的爽剧，等你来演两集！`,
-		size: "300MB+",
-        version: "1.03",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 28, 
-        name: "甜蜜女友3", 
-        type: ["mobile","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/28.png",
-        screenshots: [
-		"./images/screenshots/28/1.jpg",
-        ],
+    id: 28, name: "甜蜜女友3",  type: [1,3],isFeatured: false,size: "2GB+",version: "1.03",updateDate: "2025-10-13",
     description: `故事讲的是男主住进一座女子宿舍，帮祖母管理宿舍，因此邂逅了五位性格迥异的美丽女主,游戏以大海与群山环绕的温泉小镇为舞台，加入海水浴场等场景，美少女的泳装、浴衣身姿自然少不了。`,
-		size: "2GB+",
-        version: "1.03",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 29, 
-        name: "挑战莉莉酱", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/29.png",
-        screenshots: [
-		"./images/screenshots/29/1.jpg",
-        ],
+    id: 29, name: "挑战莉莉酱", type: [2], isFeatured: false,size: "2GB+",version: "",updateDate: "2025-10-13",
     description: `游戏设定在近未来一座被封锁的“第一区”，这里高楼林立、地下铁错综复杂，还有废弃实验室隐匿其中。AI控制的机械哨兵与残余人类势力各据一方，玩家有72小时的限时撤离机会，地图内昼夜交替、天气实时变化，一旦断电，整个区域会陷入黑暗与混乱。`,
-		size: "2GB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 30, 
-        name: "虚拟少女开发计划", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/30.png",
-        screenshots: [
-		"./images/screenshots/30/1.jpg",
-        ],
+    id: 30, name: "虚拟少女开发计划",type: [2],isFeatured: false,size: "700MB+", version: "", updateDate: "2025-10-13",
     description: `这是一款互动SLG游戏，玩家可以在其中通过点击角色的手，巧妙地引导她到达指定的位置。玩家可以与虚拟少女进行丰富的互动，让你的游戏体验充满乐趣。在游戏中，你可以与虚拟少女展开深度互动，探索游戏世界！`,
-		size: "700MB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 31, 
-        name: "少女的求生之路", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/31.png",
-        screenshots: [         
-		"./images/screenshots/31/1.jpg",
-        ],
+    id: 31,name: "少女的求生之路",type: [2],isFeatured: false,size: "900MB+",version: "",updateDate: "2025-10-13",
     description: `这是一款末世RPG冒险生存类游戏,玩家需要扮演末世中努力求生的少女。 为了和众多怪物对战,少女突然拥有了变身魔法少女的能力! 因为物资匮乏,主角或许只能用一些“奇怪”的材料制作“奇怪”的食物。`,
-		size: "900MB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 32, 
-        name: "逃离家暴", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/32.png",
-        screenshots: [         
-		"./images/screenshots/32/1.jpg",
-        ],
+    id: 32, name: "逃离家暴", type: [1], isFeatured: false,size: "200MB+",version: "",updateDate: "2025-10-13",
     description: `一款非常火爆的冒险解谜逃脱类手游，以学生逃离家暴父母作为主题，采用3D第一人称视角，营造出沉浸式的逃脱体验，还拥有丰富的解谜元素、多样的逃脱路线以及高度自由的探索玩法让玩家在紧张刺激的逃脱过程中，充分锻炼观察力、逻辑思维和应变能力，享受解谜带来的乐趣。`,
-		size: "200MB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 33, 
-        name: "狼伴侣", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/33.png",
-        screenshots: [         
-		"./images/screenshots/33/1.jpg",
-        ],
+    id: 33,name: "狼伴侣",type: [1,2,3],isFeatured: false,size: "2000MB+",version: "",updateDate: "2025-10-13",
     description: `一款校园题材的解谜逃生游戏。玩家扮演的转校生邂逅了芙蕾雅，因老师的差事深夜回到学校时，芙蕾雅变成狼女开始追逐玩家。游戏有20种不同结局，融合了剧情和解谜玩法。玩家需要躲避芙蕾雅的追击，寻找学校中的重要道具，还可灵活利用身边物品吸引芙蕾雅的注意力，从而顺利逃出学校。`,
-		size: "2000MB+",
-        version: "",
-        updateDate: "2025-10-13"
     },
 	{ 
-        id: 34, 
-        name: "夏音公寓", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/34.png",
-        screenshots: [         
-		"./images/screenshots/34/1.jpg",
-        ],
+    id: 34,name: "夏音公寓", type: [1,2,3],isFeatured: false,size: "2000MB+",version: "",updateDate: "2025-10-17",
     description: `一款端游移植的角色扮演恋爱模拟游戏。扮演一个普通的学生，生活似乎很平凡，但随着同学的到来，你的世界开始微妙地改变。那天，学生突然决定回家，她带着一种神秘和不确定的感觉回来。你以为这只是一个简单的同学派对，但她的笑容，她的目光，每一个细节都加快了你的心。`,
-		size: "2000MB+",
-        version: "",
-        updateDate: "2025-10-17"
     },
 	{ 
-        id: 35, 
-        name: "别对我过分着迷", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/35.png",
-        screenshots: [         
-		"./images/screenshots/35/1.jpg",
-        ],
+    id: 35,name: "别对我过分着迷",type: [1,2,3], isFeatured: false,size: "200MB+",version: "1.0",updateDate: "2025-10-17",
     description: `一款以病娇题材为主的互动叙事游戏，在这款游戏中，玩家将扮演主角，与多位性格迥异的角色展开互动，通过对话和事件分支推动剧情发展。玩家需要根据角色性格和场景选择行动方案，不同的选择会影响角色的命运，游戏包含黑圆满结局和悲剧结局等多种结局。`,
-		size: "200MB+",
-        version: "1.0",
-        updateDate: "2025-10-17"
     },
 	{ 
-        id: 36, 
-        name: "赤莲忍法帖", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/36.png",
-        screenshots: [         
-		"./images/screenshots/36/1.jpg",
-        ],
+    id: 36, name: "赤莲忍法帖",type: [1,2,3], isFeatured: false,size: "200MB+",version: "1.0",updateDate: "2025-10-17",
     description: `一款忍者格斗题材的剧情游戏，玩家在游戏中扮演赤莲忍者，通过独特的忍法帖系统释放技能，体验水墨风格的忍术对决，游戏包含连招组合、忍术切换等核心玩法，并已推出多个DLC角色。`,
-		size: "200MB+",
-        version: "1.0",
-        updateDate: "2025-10-17"
     },
 	{ 
-        id: 37, 
-        name: "办公室牛人", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/37.png",
-        screenshots: [         
-		"./images/screenshots/37/1.jpg",
-        ],
+    id: 37,name: "办公室牛人",type: [1,2,3], isFeatured: false,size: "1500MB+",version: "0.5",updateDate: "2025-10-18",
     description: `一款欧美风SLG类游戏。这是一本几乎完全由女性经营的高调时尚杂志。但 HauteBeat 不仅仅只有光鲜的封面和截止日期。办公室里挤满了自信、迷人的女性——每个人都是挑战，每个人都有自己的欲望和秘密。对于我们的主角——仍然是处男并且完全没有准备——说，这次实习可能是他一生中最紧张的教育。你做的每一个决定都会影响他的道路：有多条路线和分支选择，由你来决定我们主角的故事的结局，因为他一头扎进了残酷的时尚界。欲望、诱惑和错综复杂的关系在等待着他，但主要的问题是：在他HauteBeat的任期结束时，他会被这些女人征服……还是会崛起并将她们全部据为己有？`,
-		size: "1500MB+",
-        version: "0.5",
-        updateDate: "2025-10-18"
     },
-		{ 
-        id: 38, 
-        name: "隔壁人妻2", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/38.png",
-        screenshots: [         
-		"./images/screenshots/38/1.jpg",
-        ],
-    description: `这是一款采用视觉小说结合可操作漫画玩法的游戏，‌‌通过日常互动（逐步拉近主角与邻居人妻的距离，铺垫情感或冲突。例主角偶然帮助对方解决家庭问题，触发后续发展。从暧昧对话到肢体接触，分阶段推进关系，增强代入感。
-`,
-		size: "1500MB+",
-        version: "",
-        updateDate: "2025-10-20"
+	{ 
+    id: 38,name: "隔壁人妻2", type: [1,2,3],isFeatured: false,size: "1500MB+",version: "",updateDate: "2025-10-20",
+    description: `这是一款采用视觉小说结合可操作漫画玩法的游戏，‌‌通过日常互动（逐步拉近主角与邻居人妻的距离，铺垫情感或冲突。例主角偶然帮助对方解决家庭问题，触发后续发展。从暧昧对话到肢体接触，分阶段推进关系，增强代入感。`,
     },
-		{ 
-        id: 39, 
-        name: "闹鬼港湾", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/39.png",
-        screenshots: [         
-		"./images/screenshots/39/1.jpg",
-        ],
+	{ 
+    id: 39, name: "闹鬼港湾", type: [1,2,3], isFeatured: false,size: "1500MB+",version: "",updateDate: "2025-10-21",
     description: `作为一名专业的驱鬼猎人，你被雇佣来制服一群制造麻烦的魅魔。你并不是最理想的人选……但你是老板唯一能联系到的。其他所有猎人和驱魔师都已经失败了任务，被魅魔的诱惑技巧彻底拿下。为了不被炒鱿鱼，你得确保能制服（并上）所有在这座鬼屋中出没的魅魔——而且不能被发现。`,
-		size: "1500MB+",
-        version: "",
-        updateDate: "2025-10-21"
     },
 	{ 
-        id: 40, 
-        name: "夏色泡影", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/40.png",
-        screenshots: [         
-		"./images/screenshots/40/1.jpg",
-        ],
+    id: 40,name: "夏色泡影",type: [1,2,3],isFeatured: false,size: "1200MB+",version: "0.3",updateDate: "2025-10-20",
     description: `夏色泡影是一款以校园恋爱为背景的视觉小说角色扮演游戏，玩家需与女主角交流、关注和给予支持，通过解决难题和收集隐藏物品逐渐揭示故事背后的秘密，并通过活动加深彼此了解。游戏特色在于倾听女主角心声、与其他追求者保持良好关系，并表达真实感情。通过精美的立绘和剧情，夏色泡影给玩家体验多个女主角之间纯爱故事的机会。`,
-		size: "1200MB+",
-        version: "0.3",
-        updateDate: "2025-10-20"
     },
-		{ 
-        id: 41, 
-        name: "夏日14天", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/41.png",
-        screenshots: [         
-		"./images/screenshots/41/1.jpg",
-        ],
+	{ 
+    id: 41, name: "夏日14天",type: [1,2,3],isFeatured: false,size: "700MB+",version: "",updateDate: "2025-10-20",
     description: `一款别出心裁的独立游戏，融合末日题材，将横版像素探索、模拟经营与多结局剧情巧妙结合，为玩家带来一场紧张刺激且充满深度的游戏体验。游戏以独特的14天倒计时开启，从「第1天清晨」起，右上角剩余天数的显示时刻提醒着玩家时间的紧迫，凌晨0点自动推进下一天，无法回溯，营造出强烈的紧迫感。`,
-		size: "700MB+",
-        version: "",
-        updateDate: "2025-10-20"
     },
 	{ 
-        id: 42, 
-        name: "车祸模拟器", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/42.png",
-        screenshots: [         
-		"./images/screenshots/42/1.jpg",
-        ],
-    description: `车祸模拟器是一款专注于模拟车祸的驾驶游戏，旨在通过真实的物理反馈和细腻的破坏过程，为玩家提供极致的体验。游戏通过3D引擎优化，展现了从碰撞到解体的真实世界物理反应，每种车辆的结构和破坏效果各不相同，从高速撞击到极限环境测试，玩家可以体验不同场景中的车辆毁灭效果。`,
-		size: "200MB+",
-        version: "",
-        updateDate: "2025-10-24"
+    id: 42,name: "车祸模拟器", type: [1],isFeatured: false,size: "200MB+",version: "",updateDate: "2025-10-24",
+    description: `车祸模拟器是一款专注于模拟车祸的驾驶游戏，旨在通过真实的物理反馈和细腻的破坏过程，为玩家提供极致的体验。游戏通过3D引擎优化，展现了从碰撞到解体的真实世界物理反应，每种车辆的结构和破坏效果各不相同，从高速撞击到极限环境测试，玩家可以体验不同场景中的车辆毁灭效果。`,	
     },
 	{ 
-        id: 43, 
-        name: "大鸟妙妙屋", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/43.png",
-        screenshots: [         
-		"./images/screenshots/43/1.jpg",
-        ],
+    id: 43,name: "大鸟妙妙屋",type: [1],isFeatured: false,size: "2000MB+",version: "",updateDate: "2025-10-26",
     description: `在魔法资质测试中惨遭滑铁卢后，你被分到了校园里最古怪的一群学生中。在学院的第一晚，你就遭遇了一场“袭击”——来自露西，一个男魅魔，他似乎对新来的你很感兴趣……而当你达到高潮的那一刻，露西体内的魔力暴走，甚至因为能量过剩而发生了变身……就在那一刻，你才发现自己其实拥有一种罕见的天赋：你是“魔力共鸣者”，一种能与他人魔法产生共振并放大的罕见体质。。`,
-		size: "2000MB+",
-        version: "",
-        updateDate: "2025-10-26"
     },
 	{ 
-        id: 44, 
-        name: "道德界限", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/44.png",
-        screenshots: [         
-		"./images/screenshots/44/1.jpg",
-        ],
-    description: `准备好迎接一段激动人心的体验吧，你的每一个选择都可能为你铺就成功之路，也可能将你的生活拖入阴谋诡计的漩涡。故事的核心人物是艾玛，一位在一家大公司开始新工作的年轻女性。但她很快意识到，办公室的墙壁不仅隐藏着职业机会，还隐藏着一张错综复杂的阴谋和秘密之网，她必须巧妙地应对。`,
-		size: "3GB+",
-        version: "0.551",
-        updateDate: "2025-10-27"
+    id: 44, name: "道德界限", type: [1,2,3], isFeatured: false,size: "3GB+",version: "0.551",updateDate: "2025-10-27",
+    description: `准备好迎接一段激动人心的体验吧，你的每一个选择都可能为你铺就成功之路，也可能将你的生活拖入阴谋诡计的漩涡。故事的核心人物是艾玛，一位在一家大公司开始新工作的年轻女性。但她很快意识到，办公室的墙壁不仅隐藏着职业机会，还隐藏着一张错综复杂的阴谋和秘密之网，她必须巧妙地应对。`,	
     },
 	{ 
-        id: 45, 
-        name: "女吊", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/45.png",
-        screenshots: [         
-		"./images/screenshots/45/1.jpg",
-        ],
+    id: 45,  name: "女吊", type: [2],isFeatured: false,size: "1300MB+",version: "",updateDate: "2025-10-28",
     description: `是一款双人合作模式的3D中式民俗恐怖解密游戏，两名玩家在游戏中扮演一对被困荒村的兄妹，前无去处，无路可退，森森雾雨之中，揭晓前尘往事。`,
-		size: "1300MB+",
-        version: "",
-        updateDate: "2025-10-28"
     },
 	{ 
-        id: 46, 
-        name: "痴情哥哥与病弱妹妹的乡间生活", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/46.png",
-        screenshots: [         
-		"./images/screenshots/46/1.jpg",
-        ],
-    description: `妹妹“明日美”，天生肺功能弱，体弱多病，无法适应城市里的生活。兄妹为了能欢度快乐的生活，他们搬家到了空气清新的乡下。生活在与世隔绝的老屋里，兄妹二人陷入了爱河。为了继续这种生活，医生提出必须达成“身心健康”和“增加妹妹的体质”这两个条件。与妹妹爱爱增强体魄，来应对医生的定期检查，同时通过各种各样的事件逐步改善生活水平吧。`,
-		size: "1300MB+",
-        version: "",
-        updateDate: "2025-10-29"
+    id: 46,name: "痴情哥哥与病弱妹妹的乡间生活",type: [2],isFeatured: false,size: "1300MB+",version: "",updateDate: "2025-10-29",
+    description: `妹妹“明日美”，天生肺功能弱，体弱多病，无法适应城市里的生活。兄妹为了能欢度快乐的生活，他们搬家到了空气清新的乡下。生活在与世隔绝的老屋里，兄妹二人陷入了爱河。为了继续这种生活，医生提出必须达成“身心健康”和“增加妹妹的体质”这两个条件。与妹妹爱爱增强体魄，来应对医生的定期检查，同时通过各种各样的事件逐步改善生活水平吧。`,	
     },
 	{ 
-        id: 47, 
-        name: "谪仙索欢录", 
-        type: ["mobile","pc","gentleman"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/47.png",
-        screenshots: [         
-		"./images/screenshots/47/1.jpg",
-        ],
+    id: 47, name: "谪仙索欢录",type: [1,2,3], isFeatured: false,size: "400MB+",version: "",updateDate: "2025-10-27",
     description: `尊者轩辕月在与魔尊的战斗中遭受修为尽失的诅咒。诅咒极难去除，即使学会九转阴阳合欢法，也只是暂时的借双修将诅咒转嫁给对方，无法根除。直到一周前，他得知梦汐湾小镇出现一个上古秘境，里面拥有解除咒诅的宝物万花琉璃花。几番思索，他决定前往梦汐湾小镇。在那里，他将成功利用修仙者们还是成为她们的猎物？。`,
-		size: "400MB+",
-        version: "",
-        updateDate: "2025-10-27"
     },
 	{ 
-        id: 48, 
-        name: "你爹送你上学", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/48.png",
-        screenshots: [         
-		"./images/screenshots/48/1.jpg",
-        ],
+    id: 48, name: "你爹送你上学", type: [1],isFeatured: false,size: "400MB+",version: "",updateDate: "2025-10-31",
     description: `你将扮演一名爸爸，骑着自行车送儿子上学。但是，这个旅程充满了各种挑战和危险，需要你不断地闯关和挑战。游戏中有多种地形和关卡，需要你在各种障碍物和陷阱之间穿梭，使用自行车的技巧来跳跃、滑行和翻滚，以避免撞到障碍物或掉入陷阱。你需要不断地收集道具和金币，来升级自己的自行车和装备，以应对越来越困难的关卡和挑战。`,
-		size: "400MB+",
-        version: "",
-        updateDate: "2025-10-31"
-    },
+	},
 	{ 
-        id: 49, 
-        name: "按摩沙龙春风亭", 
-        type: ["mobile"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/49.png",
-        screenshots: [         
-		"./images/screenshots/49/1.jpg",
-        ],
+    id: 49, name: "按摩沙龙春风亭", type: [1], isFeatured: false,size: "300MB+", version: "",updateDate: "2025-11-3",
     description: `在大城市混迹的你，因为一次偶然机会，回到了阔别已久的家乡继承了叔叔经营的按摩沙龙。在这里有形形色色的客人等待着你，你可以通过不同按摩技巧来满足客人，当然，努力经营赚钱也是很重要的，有些客人会因为你店的装修水准太低或名声太差而不愿意进店按摩。总之，努力的让自己财色兼收吧！！`,
-		size: "300MB+",
-        version: "",
-        updateDate: "2025-11-3"
     },
 	{ 
-        id: 50, name: "情妇之塔",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/50.png",screenshots: ["./images/screenshots/50/1.jpg",],size: "400MB+",version: "3.08",updateDate: "2025-11-4",
+    id: 50, name: "情妇之塔",type: [1],isFeatured: false,size: "400MB+",version: "3.08",updateDate: "2025-11-4",
     description: `你被迫参与一项实验，并被送到一个被女魔困扰的奇幻世界。你会迎难而上，击败她们，还是会被碾碎成奴隶？`,	
     },
 	{ 
-        id: 52,name: "顽皮的莱安娜", type: ["mobile"], qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/52.png",screenshots: ["./images/screenshots/52/1.jpg",],size: "1400MB+",version: "1.03",updateDate: "2025-11-6",
+    id: 52,name: "顽皮的莱安娜", type: [1], isFeatured: false,size: "1400MB+",version: "1.03",updateDate: "2025-11-6",
     description: `顽皮的莱安娜是一款全新的互动角色扮演游戏，在游戏当中玩家需要控制女主进行各种恶作剧游戏，使用自己的行为来获得更多的快乐，逐渐解锁不同的能力体验，享受到游戏的趣味性，为我们的玩耍之旅带来更多的快乐，快来展开不一样的冒险吧。`,		
     },
 	{ 
-        id: 53, name: "耐心perpenie",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false, icon: "./images/icons/53.png", screenshots: ["./images/screenshots/53/1.jpg",],size: "500MB+",version: "1.03",updateDate: "2025-11-7",
+    id: 53, name: "耐心perpenie",type: [2],isFeatured: false,size: "500MB+",version: "1.03",updateDate: "2025-11-7",
     description: `在后苏联时代阴郁的日常生活氛围中，诸如清洁、烹饪和探索自己的房间等日常琐事，都隐藏着更为黑暗的秘密。在疯子找到你之前，努力生存并揭开真相。结束一天漫长的工作后，你回到家。`,
     },
 	{ 
-        id: 54,name: "无归",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/54.png",screenshots: ["./images/screenshots/54/1.jpg",],size: "15GB+",version: "1.03",updateDate: "2025-11-7",
-    description: `本该是带着放松心情回家的你，却发现周遭熟悉的一切已经悄然发生了变化：空无一人的楼道走廊，嘎吱作响的虚掩房门，还有墙壁上似曾相识的画像·····在这诡异却又真实的环境中，你将透过层层解谜，发现角落里隐匿而又不堪的真相。`,
-		
+    id: 54,name: "无归",type: [2],isFeatured: false,size: "15GB+",version: "1.03",updateDate: "2025-11-7",
+    description: `本该是带着放松心情回家的你，却发现周遭熟悉的一切已经悄然发生了变化：空无一人的楼道走廊，嘎吱作响的虚掩房门，还有墙壁上似曾相识的画像·····在这诡异却又真实的环境中，你将透过层层解谜，发现角落里隐匿而又不堪的真相。`,	
     },
 	{ 
-        id: 55, name: "轮舞曲duo",type: ["pc"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/55.png",screenshots: ["./images/screenshots/55/1.jpg",],size: "6GB+",version: "0.09",updateDate: "2025-11-10",
+    id: 55, name: "轮舞曲duo",type: [2],isFeatured: false,size: "6GB+",version: "0.09",updateDate: "2025-11-10",
     description: `游戏的题材选自校园，玩家们将会体验到校园中的种种浪漫爱情故事，情节比较简单，而且全城flash动画的展现形式更让我们感觉是在看一部动画片，实在是良心至极，并且画风极其的精美，采用木偶风格。`,
     },
 	{ 
-        id: 57,name: "孕育的摇篮之卵",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/57.png",screenshots: ["./images/screenshots/57/1.jpg",],size: "600MB+",version: "0.1",updateDate: "2025-11-11",
+    id: 57,name: "孕育的摇篮之卵",type: [1],isFeatured: false,size: "600MB+",version: "0.1",updateDate: "2025-11-11",
     description: `一款以奇幻冒险为主题的同人动作游戏。玩家将进入一个名为“摇篮”的神秘世界，这个世界充满了未知与危险，但也隐藏着无数的秘密等待玩家去揭开。在这个世界里，您将遇到各种前所未见的场景与角色，例如会说话的森林动物、古老的城堡幽灵等，让您仿佛置身于一个梦境般的奇妙世界。`,
     },
 	{ 
-        id: 56,name: "死宅天使",type: ["mobile"],qrCode: "./images/qrcodes/2.jpg",isFeatured: false,icon: "./images/icons/56.png",screenshots: ["./images/screenshots/56/1.jpg",],size: "2GB+",version: "1.2",updateDate: "2025-11-12",
+    id: 56,name: "死宅天使",type: [1],isFeatured: false,size: "2GB+",version: "1.2",updateDate: "2025-11-12",
     description: `游戏背景设定在一个充满日常温情的宅邸中，玩家将扮演一名死宅，与三位性格迥异、美丽动人的天使女孩共同生活，通过一系列温馨有趣的互动，逐步增进彼此的感情，解锁更多隐藏剧情和cg。游戏采用第一人称视角，让玩家仿佛身临其境，体验与美少女们共同生活的甜蜜与乐趣。`,
     },
 	{ 
-        id: 59, 
-        name: "模拟人生4", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/59.png",
-        screenshots: [         
-		"./images/screenshots/59/1.jpg",
-        ],
+    id: 59,name: "模拟人生4",type: [2],isFeatured: false,size: "600MB+", version: "0.1",updateDate: "2025-11-15",
     description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
-		size: "20GB+",
-        version: "0.1",
-        updateDate: "2025-11-14"
     },
 	{ 
-        id: 60, 
-        name: "少女卷轴5", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/60.png",
-        screenshots: [         
-		"./images/screenshots/60/1.jpg",
-        ],
-    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
-		size: "80GB+",
-        version: "",
-        updateDate: "2025-11-16"
+    id: 60, name: "少女卷轴5",type: [2], isFeatured: false,size: "80GB+",version: "",updateDate: "2025-11-16",
+    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,		
     },
 	{ 
-        id: 61, 
-        name: "失去四肢的妹妹", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/61.png",
-        screenshots: [         
-		"./images/screenshots/61/1.jpg",
-        ],
-    description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`,
-		size: "600MB+",
-        version: "0.1",
-        updateDate: "2025-11-17"
-    },
+    id: 61, name: "失去四肢的妹妹",type: [2], isFeatured: false,size: "600MB+",version: "",updateDate: "2025-11-17",
+	description: `一个充满无限想象与创造力的模拟生活游戏，它能为年轻人带来无尽的乐趣和刺激体验。在这个虚拟世界中，玩家可以自由地探索各种可能性、实现自身成长并追逐梦想，享受前所未有的人生旅程。从打造独一无二的角色形象到建立理想的家园，从选择理想职业到结交各路好友，每一个细节都能令玩家沉浸其中，仿佛置身于真实世界之中。`, },
 	{ 
-        id: 62, 
-        name: "死馆2", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/62.png",
-        screenshots: [         
-		"./images/screenshots/62/1.jpg",
-        ],
+    id: 62, name: "死馆2",type: [2], isFeatured: false,size: "3GB+",version: "",updateDate: "2025-11-18",
     description: `本作讲述的是一个有各种魔物的世界中，人类与魔族战争不断，主人公女骑士因为一些原因取得了上位种族少年的青睐，为了保护人类的公主，以为上位种族烹饪美食为条件与上位种族生活在了一起，公主与女骑士能否在上位种族离开世界前活下去？她们的命运将会如何？还有什么残酷的事件将会等待她们?`,
-		size: "3GB+",
-        version: "0.1",
-        updateDate: "2025-11-19"
+	},
+	{ 
+    id: 63, name: "千恋万花",type: [2], isFeatured: false,size: "6GB+",version: "1.1",updateDate: "2025-11-19",
+    description: `春假时被母亲拜托到外公于温泉街“穗织”开的旅馆帮忙的男主角有地将臣，在参加建实神社举办的拔出神刀“丛雨丸”的活动时无意中将其折断，之后被建实神社的神主朝武安晴要求和女儿朝武芳乃结婚。因为这场意外而就此于穗织居住的将臣，逐渐发现了穗织诅咒的秘密。讲述了一个飘着日本风情的乡下温泉街为舞台的和风恋爱故事`,
+	},
+	{ 
+    id: 64, name: "辣妹基地",type: [2], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-11-28",
+    description: `一款非常适合喜欢校园氛围、青春友情和日常互动的朋友们尝试的游戏。在这座城市的一角，有一所充满青春活力的学校。而在学校附近的一条小巷子里，隐藏着一个被大家称为“辣妹基地”的地方。这原本是一家废弃的咖啡店，经过一群辣妹们的改造，变成了她们放学后的秘密聚集地。`,
     },
 	{ 
-        id: 63, 
-        name: "千恋万花", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/63.png",
-        screenshots: [         
-		"./images/screenshots/63/1.jpg",
-        ],
-    description: `春假时被母亲拜托到外公于温泉街“穗织”开的旅馆帮忙的男主角有地将臣，在参加建实神社举办的拔出神刀“丛雨丸”的活动时无意中将其折断，之后被建实神社的神主朝武安晴要求和女儿朝武芳乃结婚。因为这场意外而就此于穗织居住的将臣，逐渐发现了穗织诅咒的秘密。讲述了一个飘着日本风情的乡下温泉街为舞台的和风恋爱故事`,
-		size: "6GB+",
-        version: "1.1",
-        updateDate: "2025-11-23"
+    id: 65, name: "身体测量员",type: [2], isFeatured: false,size: "200MB+",version: "",updateDate: "2025-11-29",
+    description: `这款由日本独立团队精心打造的像素风游戏，玩家将化身定制服装店的测量师，通过精准测量顾客体型数据，解锁多分支故事线。动态像素动画与丰富的对话系统，让每位顾客都拥有独特的背景与故事。`,
     },
-		{ 
-        id: 64, 
-        name: "辣妹基地", 
-        type: ["pc"], 
-		qrCode: "./images/qrcodes/2.jpg",
-        isFeatured: false,
-        icon: "./images/icons/64.png",
-        screenshots: [         
-		"./images/screenshots/64/1.jpg",
-        ],
-    description: `一款非常适合喜欢校园氛围、青春友情和日常互动的朋友们尝试的游戏。在这座城市的一角，有一所充满青春活力的学校。而在学校附近的一条小巷子里，隐藏着一个被大家称为“辣妹基地”的地方。这原本是一家废弃的咖啡店，经过一群辣妹们的改造，变成了她们放学后的秘密聚集地。`,
-		size: "300MB+",
-        version: "1.1",
-        updateDate: "2025-11-28"
-    },
+
 ];
 
 
