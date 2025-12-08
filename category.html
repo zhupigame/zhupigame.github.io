@@ -323,6 +323,8 @@
     function renderGameList() {
         // 【关键修改】筛选逻辑：适配数字类型数组包含匹配
         const filteredGames = allGames.filter(game => {
+		    // 过滤掉 id 为 -1 的条目
+            if (game.id === -1) return false;
             // 处理游戏类型：确保转为数组（兼容单类型和多类型）
             const gameTypes = Array.isArray(game.type) ? game.type : [game.type];
             // 分类匹配：全部游戏/或游戏类型包含当前分类对应的数字
