@@ -246,13 +246,13 @@ description: `回到乡下，重逢许久未见的夏姐，她已完全褪去青
 description: `一款日式策略角色扮演游戏，这款游戏巧妙地以日常的电车旅程为背景，围绕发生在车厢内的那些不期而遇的邂逅，缓缓展开一段段动人的故事。‌`,},
 {id: 94, name: "她在末日中堕落了",type: [2,3], isFeatured: false,size: "1000MB+",version: "",updateDate: "2025-1-17",
 description: `置身于末日的世界，看着身边的女友逐渐走向堕落，这是一种怎样的体验？是无奈的接受，还是拼尽全力去挽回？在这个充满未知与挑战的时刻，你将如何抉择，又能否守护住那份珍贵的爱情？‌`,},
-{id: 95, name: "兔女的奇妙异星冒险",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-8",
+{id: 95, name: "兔女的奇妙异星冒险",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-20",
 description: `一款设计独特的横版动作游戏。游戏中，主角艾莉的体力至关重要，是维系其生存的根本。当遭到攻击时，她的体力将如沙漏中的沙粒不断消逝，直至耗尽昏迷。如果在昏迷时不幸被暗处怪物擒获，那么等待她的很可能将是最为糟糕的可怕后果。‌`,},
-{id: -1, name: "骰子少女",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-9",
+{id: 96, name: "骰子少女",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-24",
 description: `与其他投掷骰子的游戏相比，比较新颖独特，此版本提供透视功能，玩家在这里需要想尽一切办法让自己的点数比对方大，在对决中赢得最终胜利，惩罚对方，技巧和运气都是必不可少的，游戏氛围无比欢乐。‌`,},
-{id: -1, name: "天堂女仆",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-10",
+{id: -1, name: "天堂女仆",type: [2,3], isFeatured: false,size: "300MB+",version: "",updateDate: "2025-1-25",
 description: `拯救遭受闭店危机的女仆咖啡店的小女仆们吧。培养她们，让她们成为可爱的一流的女仆。‌`,},
-{id: -1, name: "GTA5",type: [2], isFeatured: false,size: "10GB+",version: "",updateDate: "2025-1-11",
+{id: -1, name: "GTA5",type: [2], isFeatured: false,size: "10GB+",version: "",updateDate: "2025-1-26",
 description: `开放世界设计堪称一绝，为玩家提供了一个几乎没有限制的虚拟世界，让玩家可以尽情地探索和冒险。在这个世界里，玩家可以驾驶各种交通工具，如汽车、摩托车、飞机、船只等，自由穿梭于城市的大街小巷、乡村的田野山林以及海洋的波涛之上。无论是在繁华的都市中体验速度与激情，还是在宁静的乡村中享受大自然的美景，都能让玩家感受到无与伦比的自由和乐趣。‌`,},
 
 
